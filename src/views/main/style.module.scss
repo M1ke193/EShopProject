@@ -1,0 +1,16 @@
+.main {
+  position: relative;
+  
+  .products {
+    padding: 50px 0px;
+  
+    .loopProduct {
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        row-gap: 50px;
+        column-gap: 30px;
+    }
+  }
+}

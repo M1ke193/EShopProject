@@ -1,0 +1,35 @@
+@import "src/assets/styles/variables";
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+
+  .quick-link,
+  .dropdown-top {
+    display: flex;
+    gap: 20px;
+
+    > * {
+      padding: 0;
+      cursor: pointer;
+      color: $gray;
+      text-decoration: none;
+    }
+  }
+  .quick-link a:hover {
+    color: $blue;
+  }
+}
+
+.header-top.dark {
+  background-color: #292930;
+  .quick-link,
+  .dropdown-top {
+    a {
+      color: #c2c2cc;
+      i {
+        color: #c2c2cc !important;
+      }
+    }
+  }
+}

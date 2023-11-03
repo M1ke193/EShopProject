@@ -1,0 +1,25 @@
+@import "src/assets/styles/variables";
+.allProductPage {
+  font-family: $f-base;
+  .titlePage {
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 45px 0;
+  }
+  .content {
+    padding-top: 80px;
+    // flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    .filterWrap {
+      flex-basis: 21%;
+    }
+    .products {
+      border: 1px solid red;
+      flex-basis: 75%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@import "src/assets/styles/variables";
+
+.buttonWrap {
+  position: relative;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: $f-base;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  color: $black;
+  z-index: 2;
+
+  &.md {
+    padding: 19px 38px;
+  }
+
+  &.sm {
+    padding: 11px 18px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &.red.outline {
+    color: rgb(255, 73, 124);
+    background-color: transparent;
+  }
+
+  &.red.outline::after {
+    border: 1px solid rgb(255, 73, 124);
+  }
+
+  &.red.contained,
+  &.red.contained::after {
+    color: white;
+    background-color: rgb(255, 73, 124);
+  }
+
+  &.blue.outline {
+    color: $blue;
+    background-color: transparent;
+  }
+
+  &.blue.outline::after {
+    border: 1px solid $blue;
+  }
+
+  &.blue.contained,
+  &.blue.contained::after {
+    color: white;
+    background-color: $blue;
+  }
+
+  &.white.outline {
+    color: white;
+    background-color: transparent;
+  }
+
+  &.white.outline::after {
+    border: 1px solid white;
+  }
+
+  &.white.contained,
+  &.white.contained::after {
+    color: $black;
+    background-color: white;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.buttonWrap::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.buttonWrap:hover::after {
+  width: 109%;
+  height: 109%;
+}
+
+.buttonWrap.sm::after {
+  border-radius: 4px;
+}

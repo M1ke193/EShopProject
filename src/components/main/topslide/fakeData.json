@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "type": "Headphones",
+        "name": "Roco Wireless Headphone",
+        "price": 49,
+        "sale": 0,
+        "image": "src/assets/img/product-38.webp"
+    },
+    {
+        "id": "2",
+        "type": "Smartwatches",
+        "name": "Smart Digital Watch",
+        "price": 89,
+        "sale": 0,
+        "image": "src/assets/img/product-39.webp"
+    },
+    {
+        "id": "3",
+        "type": "Computer",
+        "name": "Bass Meets Clarity",
+        "price": 233,
+        "sale": 0,
+        "image": "src/assets/img/product-5.webp"
+    }
+]

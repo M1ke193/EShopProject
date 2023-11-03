@@ -1,0 +1,150 @@
+[
+  {
+    "id": "1",
+    "type": "Electronics",
+    "name": "3D™ wireless headset",
+    "image": "src/assets/img/product-big-03.webp",
+    "price": 400,
+    "sale": 20,
+    "optionimg": "src/assets/img/product-big-02.webp",
+    "rate": 4,
+    "review": 5,
+    "imgList": [
+      "/src/assets/img/product-big-03.webp",
+      "src/assets/img/product-big-02.webp",
+      "/src/assets/img/product-08.webp",
+      "/src/assets/img/product-04.webp"
+    ],
+    "desc": "The durable mouse pad is easy to clean and provides a wide, unrestricted surface for mouse movements, boosting my gaming performance.",
+    "color": ["red", "black", "blue"]
+  },
+  {
+    "id": "2",
+    "type": "Electronics",
+    "name": "PS2 DualShock 2 Wireless Controller",
+    "image": "src/assets/img/product-08.webp",
+    "price": 49.99,
+    "sale": 40,
+    "rate": 3,
+    "review": 10,
+    "imgList": [
+      "/src/assets/img/product-08.webp",
+      "/src/assets/img/product-01.webp",
+      "/src/assets/img/product-big-02.webp",
+      "/src/assets/img/product-big-03.webp"
+    ],
+    "desc": "The thick cushioning on the mouse pad reduces strain on my wrist and forearm during long hours of computer use. An essential addition to my workspace.",
+    "color": ["red", "black", "blue"]
+  },
+  {
+    "id": "3",
+    "type": "Electronics",
+    "name": "Wired Keyboard & Mouse Combo Pack",
+    "image": "src/assets/img/product-02.webp",
+    "price": 32.99,
+    "sale": 41,
+    "review": 6,
+    "optionimg": "src/assets/img/product-06.webp",
+    "rate": 1,
+    "imgList": [
+      "/src/assets/img/product-02.webp",
+      "/src/assets/img/product-01.webp",
+      "/src/assets/img/product-11.webp",
+      "/src/assets/img/product-13.webp"
+    ],
+    "desc": "Upgrade your workspace with our reliable Wired Keyboard & Mouse Combo. Say goodbye to battery hassles and connectivity issues.",
+    "color": ["red", "black", "blue"]
+  },
+  {
+    "id": "4",
+    "type": "Electronics",
+    "name": "Logitech Streamcam",
+    "image": "src/assets/img/product-03.webp",
+    "price": 400,
+    "sale": 20,
+    "review": 0,
+    "rate": 0,
+    "imgList": [
+      "/src/assets/img/product-03.webp",
+      "/src/assets/img/product-01.webp",
+      "/src/assets/img/product-08.webp",
+      "/src/assets/img/product-16.webp"
+    ],
+    "desc": "The non-slip underside of the mouse pad keeps it securely in place, allowing me to focus on my work without worrying about it sliding around.",
+    "color": ["red", "black"]
+  },
+  {
+    "id": "5",
+    "type": "Electronics",
+    "name": "Big Bass Stereo",
+    "image": "src/assets/img/product-04.webp",
+    "price": 417,
+    "sale": 7,
+    "review": 20,
+    "rate": 3,
+    "imgList": [
+      "/src/assets/img/product-04.webp",
+      "/src/assets/img/product-01.webp",
+      "/src/assets/img/product-08.webp",
+      "/src/assets/img/product-05.webp"
+    ],
+    "desc": "The high-quality mouse pad with reinforced stitched edges provides a sturdy and stylish addition to my workspace. I'm delighted with it.",
+    "color": ["red"]
+  },
+  {
+    "id": "6",
+    "type": "Electronics",
+    "name": "Bass Meets Clarity",
+    "image": "src/assets/img/product-05.webp",
+    "price": 400,
+    "sale": 42,
+    "optionimg": "src/assets/img/product-04.webp",
+    "rate": 2,
+    "review": 2,
+    "imgList": [
+      "/src/assets/img/product-05.webp",
+      "/src/assets/img/product-15.webp",
+      "/src/assets/img/product-08.webp",
+      "/src/assets/img/product-04.webp"
+    ],
+    "desc": "The LED backlighting on the keyboard is a fantastic feature, creating a cozy workspace or gaming environment and adding a stylish touch.",
+    "color": ["black"]
+  },
+  {
+    "id": "7",
+    "type": "Electronics",
+    "name": "Mouce Logitech",
+    "image": "src/assets/img/product-06.webp",
+    "price": 130,
+    "sale": 23,
+    "rate": 5,
+    "review": 39,
+    "imgList": [
+      "/src/assets/img/product-06.webp",
+      "/src/assets/img/product-02.webp",
+      "/src/assets/img/product-03.webp",
+      "/src/assets/img/product-04.webp"
+    ],
+    "desc": "The keyboard's durability and responsive keys are essential for heavy use. It's a reliable companion for my daily work.",
+    "color": ["blue"]
+  },
+  {
+    "id": "8",
+    "type": "Electronics",
+    "name": "Playstation Controller",
+    "image": "src/assets/img/product-01.webp",
+    "price": 130,
+    "sale": 23,
+    "optionimg": "src/assets/img/product-08.webp",
+    "rate": 4,
+    "review": 78,
+    "imgList": [
+      "/src/assets/img/product-08.webp",
+      "/src/assets/img/product-big-01.webp",
+      "/src/assets/img/product-big-02.webp",
+      "/src/assets/img/product-04.webp"
+    ],
+    "desc": "The laptop's multitouch trackpad and responsive touchscreen make navigation a breeze. It's a versatile tool for various tasks.",
+    "color": ["black", "red"]
+  }
+]

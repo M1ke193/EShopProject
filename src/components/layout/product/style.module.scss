@@ -1,0 +1,46 @@
+@import "src/assets/styles/mixin";
+.productLayout {
+  position: relative;
+  .slidebackgroud {
+    position: relative;
+    width: 100%;
+
+    .backgroud {
+      top: 0;
+      display: flex;
+      justify-content: center;
+      height: 580px;
+      padding-bottom: 3vh;
+      width: 100%;
+      background-color: #f9f3f0;
+      position: absolute;
+      overflow: hidden;
+      z-index: -1;
+
+      .shapeGroup {
+        height: 580px;
+        width: 100%;
+
+        .shape {
+          position: relative;
+          left: 40%;
+          bottom: -90px;
+          scale: 1.2;
+        }
+
+        .shape2 {
+          position: relative;
+          left: 37%;
+          bottom: -5px;
+          scale: 1.8;
+        }
+      }
+    }
+  }
+  .body,
+  .footer {
+    padding: 30px 15px;
+    margin: 0px 14vh;
+    @include respond-margin($breakpoint-large, 3vh);
+  }
+}

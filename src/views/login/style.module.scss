@@ -1,0 +1,23 @@
+@import "src/assets/styles/variables";
+.loginform {
+  .formGroup {
+    margin-bottom: 30px;
+  }
+  .login-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__forgotPswd {
+      text-decoration: none;
+      font-size: 14px;
+      color: $blue;
+      font-family: $f-base;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    &__forgotPswd:hover {
+      font-size: 14px;
+      color: $gray;
+    }
+  }
+}

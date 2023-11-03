@@ -1,0 +1,17 @@
+@import "src/assets/styles/variables";
+@mixin respond-margin($breakpoint, $margin) {
+  @media (max-width: $breakpoint) {
+    margin: 0px $margin;
+  }
+}
+
+@mixin respond-maxsize($breakpoint, $width: null, $height: null) {
+  @media (max-width: $breakpoint) {
+    @if $width {
+      max-width: $width;
+    }
+    @if $height {
+      max-height: $height;
+    }
+  }
+}

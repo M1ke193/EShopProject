@@ -1,0 +1,63 @@
+@import "src/assets/styles/variables";
+
+.icongroup {
+  ul {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 33px;
+
+    li {
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      transition: 0.3s;
+    }
+
+    li:hover,
+    .cart span:hover+li {
+      color: white;
+
+      &::after {
+        height: 42px;
+        width: 42px;
+      }
+    }
+
+    li::after {
+      content: "";
+      position: absolute;
+      height: 0px;
+      width: 0px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -52%);
+      background-color: $red;
+      transition: 0.3s;
+    }
+
+    .cart {
+      position: relative;
+
+      span {
+        z-index: 2;
+        cursor: pointer;
+        position: absolute;
+        width: 19px;
+        line-height: 19px;
+        text-align: center;
+        vertical-align: middle;
+        background-color: $blue;
+        border-radius: 50%;
+        font-size: 12px;
+        color: white;
+        top: -15px;
+        right: -17px;
+        border: 2px solid white;
+      }
+    }
+  }
+}

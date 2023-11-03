@@ -1,0 +1,61 @@
+@import "src/assets/styles/variables";
+@import "src/assets/styles/mixin";
+
+.header {
+  font-family: $f-base;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  padding: 8px 0px;
+  background-color: #f9f3f0;
+
+  .headertop {
+    padding: 0 15px;
+    margin: 0 14vh;
+    @include respond-margin($breakpoint-large, 3vh);
+  }
+
+  .space-headbar {
+    height: 90px;
+  }
+}
+
+.headbar-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 25px;
+
+  .headerbarWrap {
+    height: 90px;
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-end;
+    margin: 0px 15px;
+    z-index: 99;
+
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      border-radius: 10px;
+      height: 80px;
+      width: 100%;
+      padding: 0px 40px;
+      margin: 0 14vh;
+      @include respond-margin($breakpoint-large, 3vh);
+
+      .header-brand {
+        max-width: 150px;
+
+        img {
+          vertical-align: middle;
+          max-width: 130px;
+        }
+      }
+    }
+  }
+}

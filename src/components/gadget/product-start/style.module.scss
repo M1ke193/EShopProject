@@ -1,0 +1,14 @@
+@import "src/assets/styles/variables";
+.listStart {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  li {
+    i {
+      padding-right: 5px;
+      font-size: 14px;
+      color: #ffdc60;
+    }
+  }
+}

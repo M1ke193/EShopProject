@@ -1,0 +1,88 @@
+@import "src/assets/styles/variables";
+@import "src/assets/styles/mixin";
+
+.header {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0px;
+  background-color: #292930;
+
+  .headertop {
+    padding: 0 15px;
+    margin: 0 14vh;
+    @include respond-margin($breakpoint-large, 3vh);
+  }
+}
+
+.space-headbar {
+  height: 80px;
+  padding-bottom: 65px;
+}
+
+.headbar-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 37.9px;
+
+  .headerbarWrap {
+    height: 80px;
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-end;
+    z-index: 99;
+
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      height: 80px;
+      width: 100%;
+      padding: 0px calc(14vh + 20px);
+
+      @media (max-width: $breakpoint-large) {
+        padding: 0px calc(3vh + 20px);
+      }
+
+      .header-brand {
+        max-width: 150px;
+
+        img {
+          vertical-align: middle;
+          max-width: 130px;
+        }
+      }
+    }
+  }
+
+  .campain {
+    display: flex;
+    justify-content: center;
+    background-image: url("/src/assets/img/event.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    padding: 22px 18px;
+
+    .campainTitle {
+      font-family: $f-base;
+      font-size: 16px;
+      color: white;
+      font-weight: 700;
+
+      a {
+        text-decoration: underline;
+        color: white;
+        transition: 0.3s;
+      }
+
+      a:hover {
+        color: #ff497c;
+      }
+    }
+  }
+}

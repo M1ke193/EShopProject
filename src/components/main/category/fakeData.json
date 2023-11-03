@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Computers",
+    "image": "src/assets/img/computer.webp"
+  },
+  {
+    "name": "Accessories",
+    "image": "src/assets/img/vr.webp"
+  },
+  {
+    "name": "Laptops",
+    "image": "src/assets/img/computer.webp"
+  },
+  {
+    "name": "Phones",
+    "image": "src/assets/img/phone.webp"
+  },
+  {
+    "name": "Moniters",
+    "image": "src/assets/img/moniter.png"
+  },
+  {
+    "name": "Networking",
+    "image": "src/assets/img/computer.webp"
+  },
+  {
+    "name": "PC Gaming",
+    "image": "src/assets/img/gaming.webp"
+  },
+  {
+    "name": "Smartwatches",
+    "image": "src/assets/img/watch.webp"
+  },
+  {
+    "name": "Headphones",
+    "image": "src/assets/img/headphone.webp"
+  },
+  {
+    "name": "Camera & Photo",
+    "image": "src/assets/img/camera.webp"
+  },
+  {
+    "name": "Video Games",
+    "image": "src/assets/img/gaming.webp"
+  },
+  {
+    "name": "Sports",
+    "image": "src/assets/img/watch.webp"
+  }
+]

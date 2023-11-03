@@ -1,0 +1,189 @@
+@import "src/assets/styles/variables";
+@import "src/assets/styles/mixin";
+
+.topslide {
+  position: relative;
+  height: 580px;
+  display: flex;
+  font-family: $f-base;
+  align-items: center;
+  // padding-bottom: 3vh;
+  user-select: none;
+
+  .titleWrap {
+    width: 65%;
+
+    .title {
+      display: block;
+      position: relative;
+
+      .icon-title {
+        margin-bottom: 16px;
+        animation: fade 1s ease-in-out 0s 1 normal none;
+      }
+
+      .bigtitle {
+        font-size: 60px;
+        margin: 0px 0px 50px 0px;
+        padding: 0;
+        line-height: 1.2;
+        animation: fade 1s ease-in-out 0s 1 normal none;
+      }
+
+      .carticon {
+        margin-right: 10px;
+      }
+
+      .shopbtn {
+        box-shadow: 0 16px 32px 0 hsla(0, 0%, 40%, 0.06);
+        animation: fade 1.2s ease-in-out 0s 1 normal none;
+      }
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+      transform: translateY(50%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .slideWrap {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    left: 40px;
+
+    .slide {
+      display: flex;
+      align-items: center;
+      height: max-content;
+      width: max-content;
+      position: absolute;
+      transition: 0.5s;
+      will-change: transform;
+
+      div {
+        position: relative;
+
+        .saleTitle {
+          position: absolute;
+          top: 12%;
+          left: 28%;
+          transform: scale(0);
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.5s ease-in-out;
+
+          span:nth-child(1) {
+            color: $gray;
+            font-size: 16px;
+          }
+
+          span:nth-child(2) {
+            color: $blue;
+            font-size: 18px;
+            font-weight: 700;
+          }
+        }
+
+        .visibleTitle {
+          transition-delay: 0.2s;
+          opacity: 1;
+          visibility: visible;
+          transform: scale(1);
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .bigImgWarp {
+        max-width: 22.5%;
+        max-height: 75%;
+        opacity: 1;
+        @include respond-maxsize($breakpoint-large, 17.7%);
+      }
+
+      .smallImgWarp {
+        max-width: 6.7%;
+        max-height: 23%;
+        transform: translateY(11vh);
+      }
+
+      .bigImgWarp,
+      .smallImgWarp {
+        transition: 0.5s;
+      }
+
+      .visible {
+        opacity: 0;
+      }
+    }
+  }
+
+  .buttonslide {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    width: max-content;
+
+    span {
+      border-radius: 6px;
+      margin: 0 5px;
+      width: 24px;
+      transition: 0.1s;
+
+      .button {
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        height: 4px;
+        width: 24px;
+        border-radius: 6px;
+        outline: none;
+        box-shadow: 0 16px 32px 0 hsla(0, 0%, 40%, 0.06);
+        opacity: 0.5;
+        transition: all 0.4s ease-out 0s;
+      }
+
+      .button.active {
+        opacity: 1;
+        width: 34px;
+        background-color: $red;
+      }
+    }
+
+    span:has(.button.active) {
+      width: 34px;
+    }
+  }
+}

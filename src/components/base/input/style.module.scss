@@ -1,0 +1,45 @@
+@import "src/assets/styles/variables";
+
+.customInput {
+  position: relative;
+
+  label {
+    color: $gray;
+    position: absolute;
+    z-index: 1px;
+    top: -10px;
+    left: 20px;
+    font-size: 14px;
+    font-family: $f-base;
+    font-weight: 600;
+    background-color: white;
+    padding: 0px 8px;
+    cursor: pointer;
+
+    &.require::after {
+      content: '*';
+      color: red;
+    }
+  }
+
+  input {
+    font-family: $f-base;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 21px 28px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: 0.5s;
+    color: $gray;
+  }
+
+  input::placeholder {
+    color: #ccc;
+  }
+
+  input:focus {
+    outline: none;
+    border: 1px solid $blue;
+  }
+}
