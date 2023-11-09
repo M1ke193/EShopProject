@@ -7,6 +7,7 @@ interface Props {}
 const IconGroup = (props: Props) => {
   const navigate = useNavigate();
   const products = useAppSelector((state) => state.cartProduct.cartArr);
+
   return (
     <div className={style.icongroup}>
       <ul>
@@ -17,7 +18,7 @@ const IconGroup = (props: Props) => {
           <i className="fa-regular fa-heart fa-xl"></i>
         </li>
         <div onClick={() => navigate("/shop/cart")} className={style.cart}>
-          <span>{products.length}</span>
+          <span>{products?.length}</span>
           <li>
             <i className="fa-solid fa-cart-shopping fa-xl"></i>
           </li>

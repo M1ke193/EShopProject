@@ -1,5 +1,6 @@
 import { publicRouter } from "src/routers";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ModalProduct from "./components/modal-product";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           );
         })}
       </Routes>
+      <ModalProduct />
     </Router>
   );
 }

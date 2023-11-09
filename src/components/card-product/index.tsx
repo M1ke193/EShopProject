@@ -6,7 +6,6 @@ import { HTMLProps } from "react";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   product: IProduct;
-  handleSelectedItem: () => void;
 }
 
 const CardProduct = (props: Props) => {
@@ -32,7 +31,6 @@ const CardProduct = (props: Props) => {
         <GroupButton
           product={product}
           className={style.button}
-          handleSelectedItem={props.handleSelectedItem}
           hadleNavigate={hadleNavigate}
         ></GroupButton>
       </a>

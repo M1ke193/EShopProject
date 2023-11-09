@@ -5,7 +5,7 @@
   font-family: $f-base;
 
   .category {
-    padding-top: 80px
+    padding-top: 80px;
   }
 
   .products {
@@ -17,9 +17,19 @@
       padding-top: 20px;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: space-evenly;
       row-gap: 50px;
       column-gap: 30px;
+    }
+
+    .buttonWrap {
+      margin-top: 70px;
+      display: flex;
+      justify-content: center;
+
+      Button {
+        color: $gray;
+      }
     }
   }
 }

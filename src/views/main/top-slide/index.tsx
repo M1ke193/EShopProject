@@ -76,9 +76,7 @@ const TopSlide = () => {
                   }`}
                 >
                   <span>From</span>
-                  <span>{`$${item.salePrice}${
-                    item.salePrice / 10 < 10 ? ".00" : ""
-                  }`}</span>
+                  <span>{"$" + item.salePrice.toFixed(2)}</span>
                 </div>
               </div>
               {index === products.length - 1 && (

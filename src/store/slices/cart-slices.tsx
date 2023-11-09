@@ -1,12 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICartProduct } from "src/common/interface";
 
+const cartData = localStorage.getItem("cart");
+
 interface cartState {
   cartArr: ICartProduct[];
+  orderProducts: ICartProduct[];
 }
 
-const initialState: cartState = {
+const initialState: cartState = (cartData && JSON.parse(cartData)) || {
   cartArr: [],
+  orderProducts: [],
 };
 
 const cartSlice = createSlice({
@@ -21,7 +25,7 @@ const cartSlice = createSlice({
       if (duplicateCart) duplicateCart.quantity += payload.quantity;
       else state.cartArr.push(action.payload);
 
-      alert("Product will be add to cart");
+      alert("Product has been added to cart");
     },
 
     updateCartProduct: (state, action: PayloadAction<ICartProduct>) => {
@@ -57,9 +61,23 @@ const cartSlice = createSlice({
       }
     },
     orderCartProduct: (state) => {
-      state.cartArr.forEach((product) => {
-        product.isBought = product.selected || product.isBought;
+      const delteSelectedProduct: ICartProduct[] = [];
+
+      state.cartArr.forEach((item) => {
+        if (item.selected) {
+          const duplicateOrderProduct = state.orderProducts.find(
+            (Orderitem) => item.id === Orderitem.id
+          );
+          if (duplicateOrderProduct)
+            duplicateOrderProduct.quantity += item.quantity;
+          else state.orderProducts.push(item);
+        } else delteSelectedProduct.push(item);
+
+        state.cartArr = delteSelectedProduct;
       });
+    },
+    deleteOrderedProduct: (state) => {
+      state.orderProducts = [];
     },
   },
 });
@@ -70,5 +88,6 @@ export const {
   deleteCartProduct,
   selectedCartProduct,
   orderCartProduct,
+  deleteOrderedProduct,
 } = cartSlice.actions;
 export default cartSlice.reducer;

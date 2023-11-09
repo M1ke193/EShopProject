@@ -23,7 +23,6 @@ export interface IhotSaleProdcut {
 
 export interface ICartProduct extends IProduct {
   selected: boolean;
-  isBought: boolean;
   quantity: number;
 }
 

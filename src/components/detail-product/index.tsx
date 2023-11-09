@@ -63,7 +63,6 @@ const DetailProduct = (props: Props) => {
       const itemToCart: ICartProduct = {
         ...productDetail,
         selected: false,
-        isBought: false,
         quantity: productQuantity,
       };
       dispatch(addItemToCart(itemToCart));

@@ -2,19 +2,21 @@ import { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import { IProduct } from "src/common/interface";
 import fakeData from "../fakeData.json";
-import Card from "src/components/card-product";
+import CardProduct from "src/components/card-product";
 import FilterProduct from "./filter-product";
+import ModalProduct from "src/components/modal-product";
 
 interface Props {
   //   product: IProduct;
 }
 
 const AllProductsPage = (props: Props) => {
-  const [productList, setProductList] = useState<IProduct[]>([]);
+  const [products, setProducts] = useState<Array<IProduct>>([]);
 
   useEffect(() => {
-    setProductList(fakeData);
+    setProducts(fakeData);
   }, []);
+
   return (
     <div className={style.allProductPage}>
       <h1 className={style.titlePage}>Explore All Products</h1>
@@ -23,8 +25,8 @@ const AllProductsPage = (props: Props) => {
           <FilterProduct />
         </div>
         <div className={style.products}>
-          {productList.map((item, index) => (
-            <Card key={index} product={item} />
+          {products.map((item, index) => (
+            <CardProduct key={index} product={item} />
           ))}
         </div>
       </div>

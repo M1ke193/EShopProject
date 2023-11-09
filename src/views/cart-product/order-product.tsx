@@ -29,7 +29,7 @@ const OrderProduct = (props: Props) => {
         <h3>Order Sumamary</h3>
         <div className={style.subtotalOrder}>
           <span>Subtotal</span>
-          <span>{"$" + subTotalSelectedProduct + ".00"}</span>
+          <span>{"$" + subTotalSelectedProduct.toFixed(2)}</span>
         </div>
         <div className={style.shipping}>
           <span>Shipping</span>
@@ -66,7 +66,8 @@ const OrderProduct = (props: Props) => {
         <div className={style.total}>
           <span>Total</span>
           <span className={style.totalPrice}>
-            {"$" + (subTotalSelectedProduct + parseInt(shippingPrice)) + ".00"}
+            {"$" +
+              (subTotalSelectedProduct + parseInt(shippingPrice)).toFixed(2)}
           </span>
         </div>
         <Button

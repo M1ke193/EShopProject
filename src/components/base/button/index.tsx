@@ -3,7 +3,7 @@ import style from "./style.module.scss";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg";
-  color?: "red" | "blue" | "white";
+  color?: "red" | "blue" | "white" | "gray";
   variant?: "contained" | "outline";
 }
 

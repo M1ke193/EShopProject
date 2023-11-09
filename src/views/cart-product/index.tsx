@@ -8,28 +8,24 @@ import {
   updateCartProduct,
   deleteCartProduct,
   selectedCartProduct,
+  deleteOrderedProduct,
 } from "src/store/slices/cart-slices";
 import OrderProduct from "./order-product";
-import CloseButton from "src/components/close-button";
 import useScrollToTop from "src/utils/hooks/useScrollToTop";
 
 interface Props {}
 
 const CartProduct = (props: Props) => {
   const dispatch = useAppDispatch();
-  const products = useAppSelector((state) => state.cartProduct.cartArr);
-  const notBuyProducts: Array<ICartProduct> = [];
-  const purchasedProduct: Array<ICartProduct> = [];
+  const { cartArr, orderProducts } = useAppSelector(
+    (state) => state.cartProduct
+  );
 
   useScrollToTop();
 
-  products.forEach((item) => {
-    item.isBought ? purchasedProduct.push(item) : notBuyProducts.push(item);
-  });
-
-  const subTotalSelectedProduct = products.reduce(
+  const subTotalSelectedProduct = cartArr.reduce(
     (accumulator, currentValue) => {
-      if (currentValue.selected && !currentValue.isBought) {
+      if (currentValue.selected) {
         return accumulator + currentValue.salePrice * currentValue.quantity;
       }
       return accumulator;
@@ -80,7 +76,7 @@ const CartProduct = (props: Props) => {
           <span>{item.name}</span>
         </td>
         <td className={style.Price}>{"$" + item.salePrice}</td>
-        <td>
+        <td className={orderedProduct ? style.orderQuantity : ""}>
           {!orderedProduct ? (
             <CountButton
               defaulValue={item.quantity}
@@ -95,7 +91,7 @@ const CartProduct = (props: Props) => {
           )}
         </td>
         <td className={style.totalPrice}>
-          {"$" + item.quantity * item.salePrice + ".00"}
+          {"$" + (item.quantity * item.salePrice).toFixed(2)}
         </td>
       </tr>
     );
@@ -127,28 +123,33 @@ const CartProduct = (props: Props) => {
 
   return (
     <div className={style.cart}>
-      {notBuyProducts.length > 0 && (
+      {cartArr.length > 0 && (
         <>
           <h1>Your cart</h1>
-          {renderCartTable(notBuyProducts, false)}
+          {renderCartTable(cartArr, false)}
         </>
       )}
 
-      {notBuyProducts.length > 0 && (
+      {cartArr.length > 0 && (
         <OrderProduct
           subTotalSelectedProduct={subTotalSelectedProduct}
           dispatch={dispatch}
         />
       )}
 
-      {notBuyProducts.length === 0 && purchasedProduct.length === 0 && (
+      {cartArr.length === 0 && orderProducts.length === 0 && (
         <h2 style={{ textAlign: "center" }}>Your Cart Is Emtpy</h2>
       )}
 
-      {purchasedProduct.length > 0 && (
+      {orderProducts.length > 0 && (
         <>
-          <h1>Ordered</h1>
-          {renderCartTable(purchasedProduct, true)}
+          <div className={style.titleOrdered}>
+            <h1>Ordered</h1>
+            <span onClick={() => dispatch(deleteOrderedProduct())}>
+              Clear Ordered products
+            </span>
+          </div>
+          {renderCartTable(orderProducts, true)}
         </>
       )}
     </div>

@@ -217,42 +217,7 @@
       align-items: center;
 
       .count {
-        // display: flex;
         flex-basis: 130px;
-        // text-align: center;
-        // user-select: none;
-
-        // span {
-        //   text-align: center;
-        // }
-
-        // .add {
-        //   width: 32px;
-        //   height: 32px;
-        //   line-height: 32px;
-        //   font-size: 16px;
-        //   background-color: #f6f7fb;
-        //   border-radius: 50%;
-        //   border: 2px solid transparent;
-        //   margin: 0 2px;
-        //   transition: 0.3s;
-        //   cursor: pointer;
-        // }
-
-        // .add:hover {
-        //   border-color: $blue;
-        // }
-
-        // .input {
-        //   display: flex;
-        //   align-items: center;
-        //   justify-content: center;
-        //   text-align: center;
-        //   width: 28px;
-        //   font-size: 20px;
-        //   margin: 0 12px;
-        //   overflow: hidden;
-        // }
       }
 
       .wish {
@@ -303,4 +268,15 @@
       }
     }
   }
+}
+
+@media (min-width: 1500px) {
+  .sliderWrap {
+    height: 83vh;
+
+    .slider {
+      height: 75%;
+    }
+  }
+
 }

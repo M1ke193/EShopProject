@@ -66,6 +66,21 @@
     background-color: white;
   }
 
+  &.gray.outline {
+    color: $light;
+    background-color: transparent;
+  }
+
+  &.gray.outline::after {
+    border: 1px solid $light;
+  }
+
+  &.gray.contained,
+  &.gray.contained::after {
+    color: $black;
+    background-color: $light;
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

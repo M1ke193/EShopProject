@@ -3,45 +3,61 @@
 .cart {
   font-family: $f-base;
   min-height: 50vh;
+
   .cartTable {
     width: 100%;
     text-align: left;
     margin-bottom: 80px;
+
     .headerRow {
       padding: 18px 15px;
       font-size: 20px;
     }
+
     .ProductRow {
       font-size: 20px;
+
       .checkbox {
         height: 18px;
         width: 18px;
       }
+
       td {
         padding: 15px;
       }
+
       .checkBoxRow {
         padding: 15px 15px 15px 0px;
       }
+
       .Price,
       .totalPrice {
         color: $gray;
         font-weight: 500;
       }
+
+      .orderQuantity {
+        padding-left: 25px;
+      }
     }
+
     .nameRow {
       display: flex;
       align-items: center;
       gap: 30px;
+
       .imgwrap {
         max-width: 80px;
         max-height: 80px;
+
         img {
+          border-radius: 10px;
           object-fit: cover;
           width: 100%;
           height: 100%;
         }
       }
+
       span {
         font-size: 20px;
         word-break: break-word;
@@ -49,6 +65,25 @@
       }
     }
   }
+
+  .titleOrdered {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      color: $blue;
+      font-size: 14px;
+      transition: 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
   .orderWrap {
     position: relative;
     background-color: #f9f3f0;
@@ -58,8 +93,10 @@
     left: 100%;
     transform: translateX(-100%);
     font-size: 16px;
-    margin-top: 40px;
+    margin: 40px 0px;
+
     .order {
+
       .subtotalOrder,
       .shipping,
       .total {
@@ -68,18 +105,23 @@
         padding: 18px 0px;
         border-bottom: 1px solid #dee2e6;
       }
+
       h3 {
         font-size: 20px;
         margin: 0;
         margin-bottom: 30px;
       }
+
       .shipping {
         .selectedGroup {
           display: flex;
           flex-direction: column;
           letter-spacing: 0.2px;
           gap: 10px;
+
           label {
+            display: flex;
+
             input {
               width: 16px;
               height: 16px;
@@ -88,6 +130,7 @@
           }
         }
       }
+
       .total {
         .totalPrice {
           font-size: 20px;
@@ -95,6 +138,7 @@
           font-weight: bold;
         }
       }
+
       .orderButton {
         margin-top: 30px;
         width: 100%;
