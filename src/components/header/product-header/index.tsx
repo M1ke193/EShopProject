@@ -1,4 +1,3 @@
-import React from "react";
 import style from "./style.module.scss";
 import { Link } from "react-router-dom";
 import logo from "src/assets/img/logo.png";
@@ -6,9 +5,7 @@ import IconGroup from "../icon-group";
 import TopHeader from "../top-header";
 import NavHeader from "../nav-header";
 
-type Props = {};
-
-const ProductHeader = (props: Props) => {
+const ProductHeader = () => {
   return (
     <>
       <div className={style.header}>

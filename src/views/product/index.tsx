@@ -3,9 +3,7 @@ import style from "./style.module.scss";
 import DetailProduct from "src/components/detail-product";
 import DescProduct from "src/views/product/desc-product";
 
-type Props = {};
-
-const Productpage = (props: Props) => {
+const Productpage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

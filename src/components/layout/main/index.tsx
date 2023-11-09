@@ -1,4 +1,3 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "src/components/footer";
 import Header from "src/components/header";
@@ -6,9 +5,7 @@ import style from "./style.module.scss";
 import shape from "src/assets/img/shape.webp";
 import shape2 from "src/assets/img/shape2.webp";
 
-interface Props {}
-
-const MainLayout = (props: Props) => {
+const MainLayout = () => {
   return (
     <div className={style.mainlayout}>
       <Header type="main" />

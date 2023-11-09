@@ -4,13 +4,8 @@ import { IProduct } from "src/common/interface";
 import fakeData from "../fakeData.json";
 import CardProduct from "src/components/card-product";
 import FilterProduct from "./filter-product";
-import ModalProduct from "src/components/modal-product";
 
-interface Props {
-  //   product: IProduct;
-}
-
-const AllProductsPage = (props: Props) => {
+const AllProductsPage = () => {
   const [products, setProducts] = useState<Array<IProduct>>([]);
 
   useEffect(() => {

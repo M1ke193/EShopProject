@@ -1,8 +1,7 @@
 import Dropdown from "src/components/header/header-dropdown";
 import style from "./style.module.scss";
-interface Props {}
 
-const NavHeader = (props: Props) => {
+const NavHeader = () => {
   return (
     <ul className={style.nav}>
       <li>

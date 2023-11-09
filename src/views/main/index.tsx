@@ -9,9 +9,7 @@ import CardProduct from "src/components/card-product";
 import { Button } from "src/components/base/button";
 import { useNavigate } from "react-router-dom";
 
-interface Props {}
-
-const MainPage = (props: Props) => {
+const MainPage = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState<Array<IProduct>>([]);
   const [slideCategory, setSlideCategory] = useState<string>("");

@@ -6,8 +6,7 @@ import { changeModalStatus } from "src/store/slices/modal-product-slices";
 import { useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
-interface Props {}
-const ModalProduct = (props: Props) => {
+const ModalProduct = () => {
   const dispatch = useAppDispatch();
   const location = useLocation();
   const currentPath = useRef("");

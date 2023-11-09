@@ -5,9 +5,7 @@ import Input from "src/components/base/input";
 import { Button } from "src/components/base/button";
 import fakeData from "./fakeData.json";
 
-interface Props {}
-
-const DescProduct = (props: Props) => {
+const DescProduct = () => {
   const [activeReview, setActiveReview] = useState(false);
   const [starReview, setStarReview] = useState(0);
 

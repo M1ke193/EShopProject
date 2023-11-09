@@ -2,9 +2,7 @@ import style from "./style.module.scss";
 import { useAppSelector } from "src/store/hooks";
 import { useNavigate } from "react-router-dom";
 
-interface Props {}
-
-const IconGroup = (props: Props) => {
+const IconGroup = () => {
   const navigate = useNavigate();
   const products = useAppSelector((state) => state.cartProduct.cartArr);
 

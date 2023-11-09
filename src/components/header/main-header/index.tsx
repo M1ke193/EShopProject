@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 import logo from "src/assets/img/logo.png";
 import IconGroup from "../icon-group";
 import TopHeader from "../top-header";
-type Props = {};
 
-const MainHeader = (props: Props) => {
+const MainHeader = () => {
   return (
     <>
       <div className={style.header}>

@@ -13,9 +13,7 @@ import {
 import OrderProduct from "./order-product";
 import useScrollToTop from "src/utils/hooks/useScrollToTop";
 
-interface Props {}
-
-const CartProduct = (props: Props) => {
+const CartProduct = () => {
   const dispatch = useAppDispatch();
   const { cartArr, orderProducts } = useAppSelector(
     (state) => state.cartProduct

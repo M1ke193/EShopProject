@@ -10,7 +10,7 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 const Dropdown = (props: Props) => {
-  const { className = "", type = "text", trigger = "hover", href = "" } = props;
+  const { className = "", type = "text", href = "" } = props;
   return (
     <div className={`${style.dropdown} ${className}`}>
       <Link className={`${style.link} ${style[type]}`} to={href}>

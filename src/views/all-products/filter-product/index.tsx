@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import fakeData from "src/views/main/slide-category/fakeData.json";
 import { ICategory } from "src/common/interface";
-type Props = {};
 
-const FilterProduct = (props: Props) => {
+const FilterProduct = () => {
   const [cate, setCate] = useState<ICategory[]>([]);
 
   useEffect(() => {

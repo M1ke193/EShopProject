@@ -1,4 +1,4 @@
-import React, { HTMLProps } from "react";
+import { HTMLProps } from "react";
 import style from "./style.module.scss";
 interface Props extends HTMLProps<HTMLDivElement> {
   iconClass: string;
