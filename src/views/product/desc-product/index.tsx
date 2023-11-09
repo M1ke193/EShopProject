@@ -52,19 +52,19 @@ const DescProduct = () => {
           <ul className={style.bottomDesc}>
             <li>
               <div>
-                <img src="/src/assets/img/icon1.png" />
+                <img src="/icon1.png" />
               </div>
               Easy Returns
             </li>
             <li>
               <div>
-                <img src="/src/assets/img/icon2.png" />
+                <img src="/icon2.png" />
               </div>
               Quality Service
             </li>
             <li>
               <div>
-                <img src="/src/assets/img/icon3.png" />
+                <img src="/icon3.png" />
               </div>
               Original Product
             </li>
@@ -80,7 +80,7 @@ const DescProduct = () => {
               <h6 className={style.titleDesc}>1 Review for this product</h6>
               <div className={style.singleComment}>
                 <div className={style.imgContainer}>
-                  <img src="/src/assets/img/avatar.png" />
+                  <img src="/avatar.png" />
                 </div>
                 <div className={style.commentText}>
                   <div className={style.groupStar}>

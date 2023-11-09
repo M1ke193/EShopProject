@@ -1,23 +1,22 @@
 import { ReactNode, useEffect } from "react";
 import { Button } from "src/components/base/button";
-import logo from "src/assets/img/logo.png";
+import logo from "/logo.png";
 import "./styles.scss";
-import { Outlet, useNavigate } from "react-router-dom";;
+import { Outlet, useNavigate } from "react-router-dom";
 
 interface Props {
   children: ReactNode;
   type: string;
-};
+}
 
 const AuthLayout = ({ type }: Props) => {
-
   const navigate = useNavigate();
   // tải ảnh trước
   useEffect(() => {
     const image1 = new Image();
     const image2 = new Image();
-    image1.src = "src/assets/img/register.png";
-    image2.src = "src/assets/img/login.png";
+    image1.src = "/register.png";
+    image2.src = "/login.png";
   }, []);
 
   const handleNavigate = () => {
@@ -32,15 +31,15 @@ const AuthLayout = ({ type }: Props) => {
         style={
           type !== "login"
             ? {
-              backgroundImage: `url("src/assets/img/register.png")`,
-              minHeight: "110%",
-            }
+                backgroundImage: `url("register.png")`,
+                minHeight: "110%",
+              }
             : {
-              backgroundImage: `url("src/assets/img/login.png")`,
-            }
+                backgroundImage: `url("/login.png")`,
+              }
         }
       >
-        <img onClick={() => navigate('/')} className="logo-login" src={logo} />
+        <img onClick={() => navigate("/")} className="logo-login" src={logo} />
         <div className="left-login__title">
           <p>We Offer the Best Products</p>
         </div>
@@ -59,8 +58,8 @@ const AuthLayout = ({ type }: Props) => {
             {type === "login"
               ? "Sign in to EShop."
               : type === "register"
-                ? "I'm New Here"
-                : "Forgot Password?"}
+              ? "I'm New Here"
+              : "Forgot Password?"}
           </h2>
           <p className="detail">
             {type !== "forgotpassword"

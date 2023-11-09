@@ -5,7 +5,7 @@
     "name": "Roco Wireless Headphone",
     "price": 89,
     "salePrice": 49,
-    "image": "src/assets/img/product-38.webp"
+    "image": "/product-38.webp"
   },
   {
     "id": "2",
@@ -13,7 +13,7 @@
     "name": "Smart Digital Watch",
     "price": 132,
     "salePrice": 89,
-    "image": "src/assets/img/product-39.webp"
+    "image": "/product-39.webp"
   },
   {
     "id": "3",
@@ -21,6 +21,6 @@
     "name": "Bass Meets Clarity",
     "price": 400,
     "salePrice": 232,
-    "image": "src/assets/img/product-5.webp"
+    "image": "/product-5.webp"
   }
 ]

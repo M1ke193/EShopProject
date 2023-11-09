@@ -1,7 +1,7 @@
 import style from "./style.module.scss";
 import NavHeader from "../nav-header";
 import { Link } from "react-router-dom";
-import logo from "src/assets/img/logo.png";
+import logo from "/logo.png";
 import IconGroup from "../icon-group";
 import TopHeader from "../top-header";
 
