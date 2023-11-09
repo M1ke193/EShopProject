@@ -1,29 +1,48 @@
-import React, { useEffect, useState } from "react";
-import Category from "src/components/main/category";
-import TopSlide from "src/components/main/topslide";
+import { useEffect, useState } from "react";
+import Category from "src/views/main/slide-category";
+import TopSlide from "src/views/main/top-slide";
 import style from "./style.module.scss";
-import ModalProduct from "src/components/main/modalproduct";
+import ModalProduct from "src/views/main/modal-product";
 import { IProduct } from "src/common/interface";
 import Title from "src/components/title";
-import fakeProducts from "./fakeData.json";
-import Card from "src/components/card";
+import fakeProducts from "../fakeData.json";
+import CardProduct from "src/components/card-product";
 
 interface Props {}
 
 const MainPage = (props: Props) => {
   const [products, setProducts] = useState<Array<IProduct>>([]);
+  const [modalSelectedItem, setModalSelectedItem] = useState<IProduct>(
+    {} as IProduct
+  );
+  const [modalStatus, setmodalStatus] = useState<boolean>(false);
+  const [slideCategory, setSlideCategory] = useState<string>("");
 
   useEffect(() => {
-    // call API get product list
     setProducts(fakeProducts);
-    // call API get category
-    ///...
   }, []);
+
+  const handleModalItemSelected = (product: IProduct) => {
+    setModalSelectedItem(product);
+    setmodalStatus(!modalStatus);
+  };
+
+  const handleOffModal = () => {
+    setmodalStatus(false);
+  };
 
   return (
     <div className={style.main}>
-      <TopSlide></TopSlide>
-      <Category> </Category>
+      <TopSlide />
+      <div className={`${style.category} `}>
+        <Title
+          iconClass="fa-solid fa-tags"
+          inconTitle="Categories"
+          title="Browse by Category"
+          setSlideAction={setSlideCategory}
+        ></Title>
+        <Category slideCategory={slideCategory} />
+      </div>
       <div className={`${style.products}`}>
         <Title
           iconClass="fa-solid fa-basket-shopping"
@@ -32,11 +51,19 @@ const MainPage = (props: Props) => {
         ></Title>
         <div className={style.loopProduct}>
           {products.map((item, index) => (
-            <Card key={index} product={item} />
+            <CardProduct
+              key={index}
+              product={item}
+              handleSelectedItem={() => handleModalItemSelected(item)}
+            />
           ))}
         </div>
       </div>
-      <ModalProduct></ModalProduct>
+      <ModalProduct
+        product={modalSelectedItem}
+        modalStatus={modalStatus}
+        handleOffModal={handleOffModal}
+      />
     </div>
   );
 };

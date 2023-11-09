@@ -4,7 +4,7 @@ import { Button } from "src/components/base/button";
 import Input from "src/components/base/input";
 import style from "./style.module.scss";
 import { validator } from "./validator";
-import Errortext from "src/components/base/errorText";
+import Errortext from "src/components/base/error-text";
 
 interface registerInputs {
   name: string;

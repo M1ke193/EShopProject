@@ -1,8 +1,8 @@
-import authRouter from "./authRouter";
-import mainRouter from "./mainRouter";
-import ProductRouter from "./productRouter";
+import authRouter from "./auth-router";
+import mainRouter from "./main-router";
+import ProductRouter from "./product-router";
 import { RouteArr } from "./modal";
-import AllProductRouter from "./allproductsRouter";
+import AllProductRouter from "./allproducts-router";
 
 const publicRouter: RouteArr = [
   authRouter,

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import style from "./style.module.scss";
 import DetailProduct from "src/components/detail-product";
-import DescProduct from "src/components/product/desc-product";
+import DescProduct from "src/views/product/desc-product";
 
 type Props = {};
 

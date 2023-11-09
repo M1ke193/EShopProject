@@ -1,0 +1,37 @@
+@import "src/assets/styles/variables";
+.CloseButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: 0.3s;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  color: $gray;
+  cursor: pointer;
+}
+
+.CloseButton:hover {
+  color: white;
+
+  &::after {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+.CloseButton::after {
+  content: "";
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -52%);
+  background-color: #3576f0ce;
+  transition: 0.3s;
+}

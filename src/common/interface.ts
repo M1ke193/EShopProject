@@ -3,15 +3,28 @@ export interface IProduct {
   type: string;
   name: string;
   price: number;
-  sale: number;
+  salePrice: number;
   image: string;
   optionimg?: string;
-  selected?: boolean;
   rate?: number;
   review: number;
   imgList: string[];
   desc: string;
   color: string[];
+}
+export interface IhotSaleProdcut {
+  id: string;
+  type: string;
+  name: string;
+  price: number;
+  salePrice: number;
+  image: string;
+}
+
+export interface ICartProduct extends IProduct {
+  selected: boolean;
+  isBought: boolean;
+  quantity: number;
 }
 
 export interface ICategory {

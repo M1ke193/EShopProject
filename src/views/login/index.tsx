@@ -5,7 +5,7 @@ import Input from "src/components/base/input";
 import style from "./style.module.scss";
 import { validator } from "./validator";
 import { Link } from "react-router-dom";
-import Errortext from "src/components/base/errorText";
+import Errortext from "src/components/base/error-text";
 
 interface LoginInputs {
   email: string;

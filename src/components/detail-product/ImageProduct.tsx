@@ -18,6 +18,10 @@ const ImageProduct = (props: Props) => {
     }
   }, [modalStatus]);
 
+  useEffect(() => {
+    calcSlideTransform();
+  }, [slidePos]);
+
   const renderChillImg = (indexImg: number, src: string) => {
     return (
       <img
@@ -43,10 +47,6 @@ const ImageProduct = (props: Props) => {
       }px)`;
     }
   };
-
-  useEffect(() => {
-    calcSlideTransform();
-  }, [slidePos]);
 
   return (
     <div className={style.slideGroup}>

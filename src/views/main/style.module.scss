@@ -1,16 +1,25 @@
+@import "src/assets/styles/variables";
+
 .main {
   position: relative;
-  
+  font-family: $f-base;
+
+  .category {
+    padding-top: 80px
+  }
+
   .products {
-    padding: 50px 0px;
-  
+    padding: 80px 0px;
+  }
+
+  .products {
     .loopProduct {
-        padding-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        row-gap: 50px;
-        column-gap: 30px;
+      padding-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      row-gap: 50px;
+      column-gap: 30px;
     }
   }
 }

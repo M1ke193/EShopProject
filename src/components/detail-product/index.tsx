@@ -1,39 +1,42 @@
-import React, { HTMLProps, useContext, useEffect, useState } from "react";
+import { HTMLProps, useEffect, useState } from "react";
 import style from "./style.module.scss";
 import { Button } from "src/components/base/button";
-import { GlobalStateContext } from "src/store/context";
-import ProductStart from "../gadget/product-start";
+import ProductStart from "../product-star";
 import ImageSlideProduct from "./ImageProduct";
+import { useAppDispatch } from "src/store/hooks";
+import { addItemToCart } from "src/store/slices/cart-slices";
+import { IProduct, ICartProduct } from "src/common/interface";
+import { useLocation } from "react-router-dom";
+import CountButton from "../base/count-button";
 
 interface Props extends HTMLProps<HTMLDivElement> {
+  product?: IProduct;
+  modalStatus?: boolean;
   type?: "modal" | "page";
 }
 
 const DetailProduct = (props: Props) => {
-  const { type = "page", className = "" } = props;
+  const { type = "page", className = "", modalStatus } = props;
+  const [productDetail, setProductDetail] = useState<IProduct>();
   const [colorPos, setColorPos] = useState(0);
-  const [count, setCount] = useState(0);
-  const globalState = useContext(GlobalStateContext);
-  const product = globalState?.modalData;
-  const modalStatus = globalState?.modalStatus;
+  const [productQuantity, setProductQuantity] = useState(0);
+  const dispatch = useAppDispatch();
+  const location = useLocation();
+
+  const handleSetProductQuantity = (quantity: number) => {
+    setProductQuantity(quantity);
+  };
 
   const renderChillRateStar = () => {
     return (
       <div className={style.startWrap}>
-        <ProductStart rate={product?.rate}></ProductStart>
-        <p
-          className={style.reviewNum}
-        >{`${product?.review} Customer Reviews`}</p>
+        <ProductStart rate={productDetail?.rate} />
+        <p className={style.reviewNum}>
+          {productDetail?.review
+            ? `${productDetail?.review} Customer Reviews`
+            : "0  Customer Reviews"}
+        </p>
       </div>
-    );
-  };
-
-  const renderCheckIcon = (text: string) => {
-    return (
-      <li>
-        <i className="fa-solid fa-check"></i>
-        {text}
-      </li>
     );
   };
 
@@ -51,41 +54,68 @@ const DetailProduct = (props: Props) => {
     );
   };
 
-  //CALULATION THE PRICE OF PRODUCT WHEN SALE
-  const calcProductPrice = product?.price
-    ? Math.round(product.price - product!.price * (product!.sale / 100))
-    : "";
-
   const handleColor = (colorPos: number) => {
     setColorPos(colorPos);
   };
 
+  const handleAddToCart = () => {
+    if (productDetail) {
+      const itemToCart: ICartProduct = {
+        ...productDetail,
+        selected: false,
+        isBought: false,
+        quantity: productQuantity,
+      };
+      dispatch(addItemToCart(itemToCart));
+    }
+  };
+
   useEffect(() => {
-    if (!modalStatus) {
-      setCount(0);
+    if (type === "page") {
+      setProductDetail(location.state.navigateProduct);
+    }
+  }, [type]);
+
+  useEffect(() => {
+    if (modalStatus === true) {
+      setProductDetail(props.product);
+    } else if (modalStatus === false) {
+      setProductQuantity(0);
       setColorPos(0);
     }
   }, [modalStatus]);
 
   return (
     <div className={`${style.wrap} ${className}`}>
-      <ImageSlideProduct modalStatus={modalStatus} images={product?.imgList} />
+      <ImageSlideProduct
+        modalStatus={modalStatus}
+        images={productDetail?.imgList}
+      />
       <div className={style.detail}>
         {type === "modal" && renderChillRateStar()}
-        <h1 className={style[type]}>{product?.name}</h1>
-        <span className={style.price}>{"$" + calcProductPrice}</span>
+        <h1 className={style[type]}>{productDetail?.name}</h1>
+        <span className={style.price}>{"$" + productDetail?.salePrice}</span>
         {type === "page" && renderChillRateStar()}
         <ul className={style.groupCheck}>
-          {renderCheckIcon("In stock")}
-          {renderCheckIcon("Free delivery available")}
-          {renderCheckIcon("Sales 30% Off Use Code: MOTIVE30")}
+          <li>
+            <i className="fa-solid fa-check"></i>
+            In stock
+          </li>
+          <li>
+            <i className="fa-solid fa-check"></i>
+            Free delivery available
+          </li>
+          <li>
+            <i className="fa-solid fa-check"></i>
+            Sales 30% Off Use Code: MOTIVE30
+          </li>
         </ul>
-        <p className={style.desc}>{product?.desc}</p>
+        <p className={style.desc}>{productDetail?.desc}</p>
         <div className={style.color}>
           <p className={style.colorTitle}>Colors:</p>
           <div className={style.groupColor}>
             <ul>
-              {product?.color.map((item, index) =>
+              {productDetail?.color?.map((item, index) =>
                 renderChillColor(index, item)
               )}
             </ul>
@@ -93,22 +123,19 @@ const DetailProduct = (props: Props) => {
         </div>
         <div className={style.groupbutton}>
           <div className={style.count}>
-            <span
-              onClick={() => {
-                if (count > 0) setCount(count - 1);
-              }}
-              className={style.add}
-            >
-              -
-            </span>
-            <span className={style.input}>
-              <span className={style.valueInput}>{count}</span>
-            </span>
-            <span onClick={() => setCount(count + 1)} className={style.add}>
-              +
-            </span>
+            {modalStatus !== false && (
+              <CountButton
+                defaulValue={productQuantity}
+                onChange={handleSetProductQuantity}
+              />
+            )}
           </div>
-          <Button disabled={count === 0} color="blue" variant="contained">
+          <Button
+            disabled={productQuantity === 0}
+            color="blue"
+            variant="contained"
+            onClick={handleAddToCart}
+          >
             Add To Cart
           </Button>
           <div className={style.wish}>

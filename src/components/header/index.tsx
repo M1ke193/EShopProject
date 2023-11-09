@@ -1,4 +1,3 @@
-import React from "react";
 import MainHeader from "./main-header";
 import ProductHeader from "./product-header";
 
@@ -8,9 +7,9 @@ interface Props {
 
 const Header = (props: Props) => {
   if (props.type === "main") {
-    return <MainHeader></MainHeader>;
+    return <MainHeader />;
   } else {
-    return <ProductHeader></ProductHeader>;
+    return <ProductHeader />;
   }
 };
 export default Header;

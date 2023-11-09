@@ -1,5 +1,4 @@
-import React from "react";
-import Dropdown from "src/components/base/dropdown";
+import Dropdown from "src/components/header/header-dropdown";
 import style from "./style.module.scss";
 interface Props {}
 
