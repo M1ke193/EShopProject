@@ -93,7 +93,9 @@ const DetailProduct = (props: Props) => {
       <div className={style.detail}>
         {type === "modal" && renderChillRateStar()}
         <h1 className={style[type]}>{productDetail?.name}</h1>
-        <span className={style.price}>{"$" + productDetail?.salePrice}</span>
+        <span className={style.price}>
+          {"$ " + productDetail?.salePrice?.toFixed(2)}
+        </span>
         {type === "page" && renderChillRateStar()}
         <ul className={style.groupCheck}>
           <li>

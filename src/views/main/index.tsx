@@ -15,7 +15,7 @@ const MainPage = () => {
   const [slideCategory, setSlideCategory] = useState<string>("");
 
   useEffect(() => {
-    setProducts(fakeProducts);
+    setProducts(fakeProducts.slice(0, 8));
   }, []);
 
   return (

@@ -2,16 +2,28 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import IconAwesome from "src/components/title/icon-awesome";
 import style from "./style.module.scss";
 import { Button } from "src/components/base/button";
-import { IhotSaleProdcut } from "src/common/interface";
 import fakeData from "./fakeData.json";
+import { IProduct } from "src/common/interface";
 
 const TopSlide = () => {
   const [activeBtn, setActiveBtn] = useState<number>(0);
   const [isHideTitle, setHideTitle] = useState<boolean>(false);
   const [slideAnimate, setslideAnimate] = useState<boolean>(false);
   const [buttonClickable, setbuttonClickable] = useState(true);
-  const [products, setProducts] = useState<Array<IhotSaleProdcut>>([]);
+  const [products, setProducts] = useState<Array<IProduct>>([]);
   const slideElementRef = useRef<HTMLDivElement>(null);
+
+  const handleSlide = (index: number) => {
+    if (activeBtn != index) {
+      setHideTitle(true);
+      setActiveBtn(index);
+      setbuttonClickable(false);
+      setslideAnimate(true);
+      setTimeout(() => {
+        setbuttonClickable(true);
+      }, 500);
+    }
+  };
 
   useEffect(() => {
     setProducts(fakeData);
@@ -25,18 +37,6 @@ const TopSlide = () => {
     }
     setHideTitle(false);
   }, [activeBtn]);
-
-  const handleSlide = (index: number) => {
-    if (activeBtn != index) {
-      setHideTitle(true);
-      setActiveBtn(index);
-      setbuttonClickable(false);
-      setslideAnimate(true);
-      setTimeout(() => {
-        setbuttonClickable(true);
-      }, 500);
-    }
-  };
 
   return (
     <div className={style.topslide}>
@@ -69,7 +69,7 @@ const TopSlide = () => {
                 } 
                   ${index >= activeBtn + 2 && style.visible}`}
               >
-                <img key={index + item.id} src={item.image} />
+                <img key={index + item.id} src={item.bigImg} />
                 <div
                   className={`${style.saleTitle} ${
                     activeBtn === index ? style.visibleTitle : ""
@@ -85,7 +85,7 @@ const TopSlide = () => {
                     activeBtn < products.length - 1 ? style.visible : ""
                   }`}
                 >
-                  <img key={index} src={products[0].image} />
+                  <img key={index} src={products[0].bigImg} />
                 </div>
               )}
             </Fragment>

@@ -1,27 +1,141 @@
 @import "src/assets/styles/variables";
+
 .filter {
+  user-select: none;
   font-family: $f-base;
   position: relative;
 
   .groupTitle {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #cbd3d9;
+
     .titleFilter {
+      width: 100%;
       margin: 0;
       font-size: 18px;
       color: #27272e;
     }
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-    padding-bottom: 30px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -2px;
+      background-color: $blue;
+      transition: 0.3s;
+    }
+
+    .plus,
+    .minus {
+      position: absolute;
+      right: 0;
+    }
+
+    .plus {
+      display: block;
+    }
+
+    .minus {
+      display: none;
+    }
+
+    &.active {
+      .plus {
+        display: none;
+      }
+
+      .minus {
+        display: block;
+      }
+    }
   }
+
+  .groupTitle.active::after {
+    width: 100%;
+  }
+
+  .groupTitle.active+.cateGroup {
+    display: block;
+  }
+
+  .groupTitle.active+.groupPrice {
+    display: flex;
+  }
+
   .cateFilter {
     display: flex;
     flex-direction: column;
+    padding-bottom: 40px;
+    cursor: pointer;
+
     .cateGroup {
+      display: none;
       margin: 0;
       padding: 0;
       list-style: none;
+      color: #777;
+
+      li {
+        margin-bottom: 12px;
+      }
+
+      .inputRadio {
+        font-size: 16px;
+        display: flex;
+        gap: 10px;
+        cursor: pointer;
+
+        input {
+          cursor: pointer;
+          height: 16px;
+          width: 16px;
+        }
+      }
+    }
+  }
+
+  .priceFilter {
+    padding-bottom: 40px;
+    cursor: pointer;
+
+    .groupPrice {
+      display: none;
+      flex-wrap: wrap;
+      gap: 13px;
+
+      .filterButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $f-base;
+        font-size: 15px;
+        padding: 5px 13px;
+        width: 55px;
+        height: 44px;
+        background-color: white;
+        border-radius: 30px;
+        border: 2px solid white;
+        color: $gray;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .activeCirle {
+        border-color: #777;
+      }
+
+      .customPrice {
+        outline: none;
+        box-sizing: border-box;
+        width: 65px;
+        padding: 5px;
+        text-align: center;
+      }
     }
   }
 }

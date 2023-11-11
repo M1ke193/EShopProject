@@ -57,6 +57,7 @@
           border-radius: 6px;
 
           img {
+            object-fit: contain;
             height: 100%;
             width: 100%;
           }
@@ -278,5 +279,4 @@
       height: 75%;
     }
   }
-
 }

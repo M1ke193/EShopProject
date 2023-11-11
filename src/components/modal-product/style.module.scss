@@ -1,4 +1,5 @@
 @import "src/assets/styles/variables";
+@import "src/assets/styles/mixin";
 
 .modalWrap {
   position: fixed;
@@ -28,6 +29,7 @@
     transform: scale(0);
     transition: 0.3s;
     overflow: hidden;
+    @include respond-margin($breakpoint-large, 6vh);
 
     .headerModal {
       display: flex;
@@ -51,14 +53,6 @@
     opacity: 1;
   }
 }
-
-// @media (min-width: 1200) {
-//   .modalWrap .modal {
-//     width: 1291px;
-//     top: 150px;
-//     transform: translateX(100px);
-//   }
-// }
 
 @media (max-height: 800px) {
   .modalWrap {

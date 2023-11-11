@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "type": "Electronics",
+    "type": "Headphones",
     "name": "3D™ wireless headset",
     "image": "/product-big-03.webp",
     "price": 400,
@@ -20,7 +20,7 @@
   },
   {
     "id": "2",
-    "type": "Electronics",
+    "type": "Video Games",
     "name": "PS2 DualShock 2 Wireless Controller",
     "image": "/product-08.webp",
     "price": 49.99,
@@ -38,7 +38,7 @@
   },
   {
     "id": "3",
-    "type": "Electronics",
+    "type": "PC Gaming",
     "name": "Wired Keyboard & Mouse Combo Pack",
     "image": "/product-02.webp",
     "price": 32.99,
@@ -57,7 +57,7 @@
   },
   {
     "id": "4",
-    "type": "Electronics",
+    "type": "Networking",
     "name": "Logitech Streamcam",
     "image": "/product-03.webp",
     "price": 400,
@@ -75,7 +75,7 @@
   },
   {
     "id": "5",
-    "type": "Electronics",
+    "type": "Accessories",
     "name": "Big Bass Stereo",
     "image": "/product-04.webp",
     "price": 417,
@@ -93,9 +93,10 @@
   },
   {
     "id": "6",
-    "type": "Electronics",
+    "type": "Accessories",
     "name": "Bass Meets Clarity",
     "image": "/product-05.webp",
+    "bigImg": "/product-5.webp",
     "price": 400,
     "salePrice": 232,
     "optionimg": "/product-04.webp",
@@ -112,7 +113,7 @@
   },
   {
     "id": "7",
-    "type": "Electronics",
+    "type": "PC Gaming",
     "name": "Mouce Logitech",
     "image": "/product-06.webp",
     "price": 130,
@@ -130,7 +131,7 @@
   },
   {
     "id": "8",
-    "type": "Electronics",
+    "type": "Video Games",
     "name": "Playstation Controller",
     "image": "/product-01.webp",
     "price": 49.99,
@@ -146,5 +147,116 @@
     ],
     "desc": "The laptop's multitouch trackpad and responsive touchscreen make navigation a breeze. It's a versatile tool for various tasks.",
     "color": ["black", "red"]
+  },
+  {
+    "id": "9",
+    "type": "Headphones",
+    "name": "Roco Wireless Headphone",
+    "image": "/product-big-01.webp",
+    "bigImg": "/product-38.webp",
+    "price": 169,
+    "salePrice": 49.99,
+    "rate": 5,
+    "review": 35,
+    "imgList": [
+      "/product-big-01.webp",
+      "/product-04.webp",
+      "/product-big-02.webp",
+      "/product-08.webp"
+    ],
+    "desc": "Headphones provide a personalized audio experience with over-ear and in-ear options. Sleek designs, noise cancellation, and Bluetooth add convenience, making them essential for music and gaming on the go.",
+    "color": ["black"]
+  },
+  {
+    "id": "10",
+    "type": "Smartwatches",
+    "name": "Smart Digital Watch",
+    "image": "/product-watch.png",
+    "bigImg": "/product-39.webp",
+    "price": 199,
+    "salePrice": 89,
+    "rate": 4,
+    "review": 1525,
+    "imgList": [
+      "/product-watch.png",
+      "/product-04.webp",
+      "/product-big-02.webp",
+      "/product-08.webp"
+    ],
+    "desc": "Smartwatches seamlessly blend style and functionality, providing fitness tracking, notifications, apps, and connectivity. These wearables offer a holistic approach to health and communication, enhancing daily life.",
+    "color": ["black", "blue"]
+  },
+  {
+    "id": "11",
+    "type": "Computers",
+    "name": "Gaming PC i9 12900K",
+    "image": "/product-pc.png",
+    "price": 2999,
+    "salePrice": 2599,
+    "rate": 4,
+    "review": 489,
+    "optionimg": "/product-02.webp",
+    "imgList": [
+      "/product-pc.png",
+      "/product-02.webp",
+      "/product-big-02.webp",
+      "/product-08.webp"
+    ],
+    "desc": "A gaming PC is a powerful computer designed for optimal performance in video games. Equipped with high-end processors, graphics cards, and ample RAM.",
+    "color": ["black", "red"]
+  },
+  {
+    "id": "12",
+    "type": "Accessories",
+    "name": "Reverb G2 VR",
+    "image": "/product-vr.png",
+    "price": 59,
+    "salePrice": 59,
+    "rate": 3,
+    "review": 523,
+    "imgList": [
+      "/product-vr.png",
+      "/product-04.webp",
+      "/product-big-02.webp",
+      "/product-08.webp"
+    ],
+    "desc": "Virtual Reality (VR) is an immersive technology that creates a simulated environment, replicating real or imaginary scenarios.",
+    "color": ["black", "blue"]
+  },
+  {
+    "id": "13",
+    "type": "Laptops",
+    "name": "Laptop HP Stream 11",
+    "image": "/product-laptop.webp",
+    "price": 495,
+    "salePrice": 495,
+    "rate": 2,
+    "review": 345,
+    "imgList": [
+      "/product-laptop.webp",
+      "/product-04.webp",
+      "/product-big-02.webp",
+      "/product-08.webp"
+    ],
+    "desc": "The laptop's multitouch trackpad and responsive touchscreen make navigation a breeze. It's a versatile tool for various tasks.",
+    "color": ["red"]
+  },
+  {
+    "id": "14",
+    "type": "Phones",
+    "name": "Samsung Z Fold",
+    "image": "/product-phone.png",
+    "price": 299,
+    "salePrice": 139,
+    "rate": 4,
+    "review": 876,
+    "imgList": [
+      "/product-phone.png",
+      "/product-04.webp",
+      "/product-big-02.webp",
+      "/product-08.webp"
+    ],
+    "desc": " Powered by Android, these smartphones feature vibrant displays, powerful processors, and high-quality cameras.",
+    "color": ["black"]
   }
 ]

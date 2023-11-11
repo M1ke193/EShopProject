@@ -38,7 +38,9 @@ const CardProduct = (props: Props) => {
         {product.name}
       </a>
       <div className={style.groupPrice}>
-        <span className={style.oldPrice}>{"$" + product.price}</span>
+        {product.price !== product.salePrice && (
+          <span className={style.oldPrice}>{"$" + product.price}</span>
+        )}
         <span className={style.newPrice}>{"$" + product.salePrice}</span>
       </div>
     </div>

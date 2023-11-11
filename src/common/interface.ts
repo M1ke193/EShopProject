@@ -6,19 +6,12 @@ export interface IProduct {
   salePrice: number;
   image: string;
   optionimg?: string;
+  bigImg?: string;
   rate?: number;
   review: number;
   imgList: string[];
   desc: string;
   color: string[];
-}
-export interface IhotSaleProdcut {
-  id: string;
-  type: string;
-  name: string;
-  price: number;
-  salePrice: number;
-  image: string;
 }
 
 export interface ICartProduct extends IProduct {

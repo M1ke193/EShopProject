@@ -15,7 +15,6 @@
     max-height: 300px;
     max-width: 300px;
     position: relative;
-    background-color: #f5f7fb;
     cursor: pointer;
     @include respond-maxsize($breakpoint-large, 250px, 250px);
 
