@@ -1,6 +1,7 @@
 import style from "./style.module.scss";
 import { Link } from "react-router-dom";
 import Dropdown from "src/components/header/header-dropdown";
+import { itemsLanguage, itemsMoney } from "./menu-items";
 interface Props {
   className?: string;
   color?: "dark" | "white";
@@ -11,8 +12,8 @@ const TopHeader = (props: Props) => {
   return (
     <div className={`${style["header-top"]} ${className} ${style[color]}`}>
       <div className={style["dropdown-top"]}>
-        <Dropdown>En</Dropdown>
-        <Dropdown>USD</Dropdown>
+        <Dropdown items={itemsLanguage}>En</Dropdown>
+        <Dropdown items={itemsMoney}>USD</Dropdown>
       </div>
       <div className={style["quick-link"]}>
         <Link to="/register">Join Us</Link>

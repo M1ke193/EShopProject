@@ -9,13 +9,18 @@
     display: flex;
     gap: 20px;
 
-    > * {
+    >* {
       padding: 0;
       cursor: pointer;
       color: $gray;
       text-decoration: none;
     }
+
+    .item {
+      padding-right: 30px;
+    }
   }
+
   .quick-link a:hover {
     color: $blue;
   }
@@ -23,10 +28,12 @@
 
 .header-top.dark {
   background-color: #292930;
+
   .quick-link,
   .dropdown-top {
     a {
       color: #c2c2cc;
+
       i {
         color: #c2c2cc !important;
       }

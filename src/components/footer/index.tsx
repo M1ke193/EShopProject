@@ -24,10 +24,10 @@ const Footer = (props: Props) => {
       <div className={style.account}>
         <h3>Account</h3>
         <Link to="/">My Account</Link>
-        <Link to="/">Login</Link>
-        <Link to="/">Cart</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/shop/cart">Cart</Link>
         <Link to="/">Wishlist</Link>
-        <Link to="/">Shop </Link>
+        <Link to="/shop">Shop </Link>
       </div>
       <div className={style.quicklink}>
         <h3>Quick Link</h3>

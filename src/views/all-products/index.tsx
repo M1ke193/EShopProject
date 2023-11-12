@@ -53,8 +53,6 @@ const AllProductsPage = () => {
 
   useEffect(() => {
     //hanndle filter and call api
-    console.log(123);
-
     if (priceFilter !== undefined || cateFilter !== undefined) {
       optimizeApiCall();
     }

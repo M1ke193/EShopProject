@@ -1,0 +1,24 @@
+@import "src/assets/styles/variables";
+
+.cateName {
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 45px 0;
+    border-bottom: 2px solid $light;
+}
+
+.catePage {
+    .loopProduct {
+        padding-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+        align-items: baseline;
+    }
+}
+
+.noProduct {
+    font-size: 36px;
+    text-align: center;
+}

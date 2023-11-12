@@ -1,5 +1,13 @@
+@import "src/assets/styles/variables";
+
 .nav {
     display: flex;
     list-style: none;
     gap: 40px;
+
+    .link {
+        text-decoration: none;
+        color: black;
+        padding-right: 50px;
+    }
 }

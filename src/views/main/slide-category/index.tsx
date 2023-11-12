@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import style from "./style.module.scss";
 import fakeData from "./fakeData.json";
 import { ICategory } from "src/common/interface";
+import { Link } from "react-router-dom";
 
 interface Props {
   slideCategory: string;
@@ -51,10 +52,10 @@ const Category = (props: Props) => {
       >
         {categoryData.map((item, index) => (
           <div key={index}>
-            <a>
+            <Link to={`/product/category/${item.name}`}>
               <img src={item.image} />
               <span>{item.name}</span>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
