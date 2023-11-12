@@ -6,8 +6,9 @@ import ImageSlideProduct from "./ImageProduct";
 import { useAppDispatch } from "src/store/hooks";
 import { addItemToCart } from "src/store/slices/cart-slices";
 import { IProduct, ICartProduct } from "src/common/interface";
-import { useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import CountButton from "../base/count-button";
+import fakeData from "src/views/fakeData.json";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   product?: IProduct;
@@ -21,7 +22,8 @@ const DetailProduct = (props: Props) => {
   const [colorPos, setColorPos] = useState(0);
   const [productQuantity, setProductQuantity] = useState(0);
   const dispatch = useAppDispatch();
-  const location = useLocation();
+  const params = useParams();
+  const navigate = useNavigate();
 
   const handleSetProductQuantity = (quantity: number) => {
     setProductQuantity(quantity);
@@ -71,9 +73,11 @@ const DetailProduct = (props: Props) => {
 
   useEffect(() => {
     if (type === "page") {
-      setProductDetail(location.state.navigateProduct);
+      const { id } = params;
+      const product = fakeData.find((item) => item.id === id);
+      product ? setProductDetail(product) : navigate("/");
     }
-  }, [type]);
+  }, []);
 
   useEffect(() => {
     if (modalStatus === true) {

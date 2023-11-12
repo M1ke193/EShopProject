@@ -4,6 +4,7 @@ import style from "./style.module.scss";
 import { Button } from "src/components/base/button";
 import fakeData from "./fakeData.json";
 import { IProduct } from "src/common/interface";
+import { useNavigate } from "react-router-dom";
 
 const TopSlide = () => {
   const [activeBtn, setActiveBtn] = useState<number>(0);
@@ -12,6 +13,7 @@ const TopSlide = () => {
   const [buttonClickable, setbuttonClickable] = useState(true);
   const [products, setProducts] = useState<Array<IProduct>>([]);
   const slideElementRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const handleSlide = (index: number) => {
     if (activeBtn != index) {
@@ -23,6 +25,12 @@ const TopSlide = () => {
         setbuttonClickable(true);
       }, 500);
     }
+  };
+
+  const hadleNavigate = () => {
+    navigate(`/product/${products[activeBtn].id}`, {
+      state: { navigateProduct: products[activeBtn] },
+    });
   };
 
   useEffect(() => {
@@ -53,6 +61,7 @@ const TopSlide = () => {
             color="white"
             variant="contained"
             className={`${style.shopbtn}`}
+            onClick={hadleNavigate}
           >
             <i className={`fa-solid fa-cart-shopping ${style.carticon}`}></i>
             Shop Now
@@ -94,10 +103,9 @@ const TopSlide = () => {
       </div>
       <div className={style.buttonslide}>
         {products.map((item, index) => (
-          <span key={item.id}>
+          <span key={item.id} onClick={() => handleSlide(index)}>
             <button
               disabled={!buttonClickable}
-              onClick={() => handleSlide(index)}
               className={`${style.button} ${
                 activeBtn === index ? style.active : ""
               }`}
