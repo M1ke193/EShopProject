@@ -2,14 +2,18 @@ import style from "./style.module.scss";
 import { useAppSelector } from "src/store/hooks";
 import { useNavigate } from "react-router-dom";
 
-const IconGroup = () => {
+interface Props {
+  handleSearchPopup: () => void;
+}
+
+const IconGroup = (props: Props) => {
   const navigate = useNavigate();
   const products = useAppSelector((state) => state.cartProduct.cartArr);
 
   return (
     <div className={style.icongroup}>
       <ul>
-        <li>
+        <li onClick={() => props.handleSearchPopup()}>
           <i className="fa-solid fa-magnifying-glass fa-xl"></i>
         </li>
         <li>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import { useParams } from "react-router-dom";
-import CardProduct from "src/components/card-product";
 import fakeData from "../fakeData.json";
 import { IProduct } from "src/common/interface";
 import useScrollToTop from "src/utils/hooks/useScrollToTop";
+import CardProduct from "src/components/card-product";
 
 const CategoryPage = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -21,7 +21,7 @@ const CategoryPage = () => {
         <div className={style.catePage}>
           <div className={style.loopProduct}>
             {products.map((item, index) => (
-              <CardProduct key={index} product={item} />
+              <CardProduct type={"primary"} key={index} product={item} />
             ))}
           </div>
         </div>

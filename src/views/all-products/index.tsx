@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import { IProduct } from "src/common/interface";
-import CardProduct from "src/components/card-product";
 import FilterProduct from "./filter-product";
 import useScrollToTop from "src/utils/hooks/useScrollToTop";
 import { Button } from "src/components/base/button";
 import { callApiFakeFetch } from "./fake-api";
 import { limitAllProductList } from "src/common/constants";
+import CardProduct from "src/components/card-product";
 
 const AllProductsPage = () => {
   const [products, setProducts] = useState<Array<IProduct>>([]);
@@ -74,7 +74,12 @@ const AllProductsPage = () => {
         <div className={style.products}>
           <div className={style.loopProduct}>
             {products.map((item, index) => (
-              <CardProduct className={style.card} key={index} product={item} />
+              <CardProduct
+                type={"primary"}
+                className={style.card}
+                key={index}
+                product={item}
+              />
             ))}
           </div>
           <div className={style.buttonWrap}>

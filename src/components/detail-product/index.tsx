@@ -1,7 +1,7 @@
 import { HTMLProps, useEffect, useState } from "react";
 import style from "./style.module.scss";
 import { Button } from "src/components/base/button";
-import ProductStart from "../product-star";
+import ProductStar from "../product-star";
 import ImageSlideProduct from "./ImageProduct";
 import { useAppDispatch } from "src/store/hooks";
 import { addItemToCart } from "src/store/slices/cart-slices";
@@ -32,7 +32,7 @@ const DetailProduct = (props: Props) => {
   const renderChillRateStar = () => {
     return (
       <div className={style.startWrap}>
-        <ProductStart rate={productDetail?.rate} />
+        <ProductStar rate={productDetail?.rate} />
         <p className={style.reviewNum}>
           {productDetail?.review
             ? `${productDetail?.review} Customer Reviews`

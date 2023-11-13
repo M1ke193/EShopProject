@@ -12,7 +12,7 @@ const CloseButton = (props: Props) => {
       onClick={props.onclick}
       className={`${style.CloseButton} ${className}`}
     >
-      <i className="fa-solid fa-xmark"></i>
+      <i className="fa-solid fa-xmark" />
     </span>
   );
 };

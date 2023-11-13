@@ -5,7 +5,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
   rate?: number;
 }
 
-const ProductStart = (props: Props) => {
+const ProductStar = (props: Props) => {
   const { rate = 0, className = "" } = props;
   return (
     <ul className={`${style.listStart} ${className}`}>
@@ -22,4 +22,4 @@ const ProductStart = (props: Props) => {
   );
 };
 
-export default ProductStart;
+export default ProductStar;

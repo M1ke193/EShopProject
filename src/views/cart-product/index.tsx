@@ -4,6 +4,7 @@ import CheckBox from "src/components/base/checkbox";
 import { useAppSelector, useAppDispatch } from "src/store/hooks";
 import { ICartProduct } from "src/common/interface";
 import CountButton from "src/components/base/count-button";
+import { useNavigate } from "react-router-dom";
 import {
   updateCartProduct,
   deleteCartProduct,
@@ -18,7 +19,7 @@ const CartProduct = () => {
   const { cartArr, orderProducts } = useAppSelector(
     (state) => state.cartProduct
   );
-
+  const navigate = useNavigate();
   useScrollToTop();
 
   const subTotalSelectedProduct = cartArr.reduce(
@@ -71,7 +72,9 @@ const CartProduct = () => {
           <div className={style.imgwrap}>
             <img src={item.image} />
           </div>
-          <span>{item.name}</span>
+          <span onClick={() => navigate(`/product/${item.id}`)}>
+            {item.name}
+          </span>
         </td>
         <td className={style.Price}>{"$" + item.salePrice}</td>
         <td className={orderedProduct ? style.orderQuantity : ""}>

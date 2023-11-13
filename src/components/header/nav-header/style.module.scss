@@ -1,13 +1,17 @@
 @import "src/assets/styles/variables";
 
 .nav {
-    display: flex;
-    list-style: none;
-    gap: 40px;
+  display: flex;
+  list-style: none;
+  gap: 40px;
 
-    .link {
-        text-decoration: none;
-        color: black;
-        padding-right: 50px;
-    }
+  .link {
+    display: block;
+    font-family: $f-base;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    margin-right: 50px;
+  }
 }

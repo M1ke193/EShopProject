@@ -4,6 +4,7 @@ import { Button } from "../../base/button";
 import { IProduct } from "src/common/interface";
 import { useAppDispatch } from "src/store/hooks";
 import { changeModalStatus } from "src/store/slices/modal-product-slices";
+
 interface Props extends HTMLProps<HTMLDivElement> {
   product: IProduct;
   hadleNavigate: () => void;

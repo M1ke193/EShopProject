@@ -5,7 +5,11 @@ import logo from "/logo.png";
 import IconGroup from "../icon-group";
 import TopHeader from "../top-header";
 
-const MainHeader = () => {
+interface Props {
+  handleSearchPopup: () => void;
+}
+
+const MainHeader = (props: Props) => {
   return (
     <>
       <div className={style.header}>
@@ -21,7 +25,7 @@ const MainHeader = () => {
               </Link>
             </div>
             <NavHeader />
-            <IconGroup />
+            <IconGroup handleSearchPopup={props.handleSearchPopup} />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import style from "./style.module.scss";
-import ProductStart from "src/components/product-star";
+import ProductStar from "src/components/product-star";
 import Input from "src/components/base/input";
 import { Button } from "src/components/base/button";
 import fakeData from "./fakeData.json";
@@ -84,8 +84,8 @@ const DescProduct = () => {
                 </div>
                 <div className={style.commentText}>
                   <div className={style.groupStar}>
-                    <span>Đinh Nhựt Minh</span>
-                    <ProductStart rate={3} className={style.star} />
+                    <span>Mike Nguyễn</span>
+                    <ProductStar rate={3} className={style.star} />
                   </div>
                   <p className={style.textDesc}>{fakeData.review}</p>
                 </div>

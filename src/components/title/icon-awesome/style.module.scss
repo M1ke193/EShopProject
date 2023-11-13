@@ -21,4 +21,11 @@
   &.red i {
     background-color: $red;
   }
+  &.purple span {
+    color: #8c71db;
+    font-weight: bold;
+  }
+  &.purple i {
+    background-color: #8c71db;
+  }
 }
