@@ -1,0 +1,56 @@
+@import "src/assets/styles/variables";
+
+@media (max-width: $breakpoint-medium) {
+  .login-container {
+    display: inline;
+    .left-login {
+      display: none;
+    }
+    .right-login {
+      justify-self: center;
+      flex-basis: 100%;
+      margin: 0;
+      .right-wrap-logo {
+        justify-content: space-between;
+        .logo-right {
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .login-container {
+    display: inline;
+    .left-login {
+      display: none;
+    }
+    .right-login {
+      .right-wrap-logo {
+        padding: 60px 30px;
+        .singUp_action {
+          flex-wrap: wrap;
+        }
+        .logo-right {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .login-container {
+    .right-login {
+      .right-wrap-logo {
+        justify-content: center;
+        padding: 60px 30px 20px;
+        .singUp_action {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

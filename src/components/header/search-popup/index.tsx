@@ -54,6 +54,7 @@ const ProductSearch = (props: Props) => {
   const handleClearSearch = () => {
     if (inputSearchRef.current) {
       inputSearchRef.current.value = "";
+      iconClearRef.current?.classList.remove(style.show);
     }
     setProducts([]);
   };

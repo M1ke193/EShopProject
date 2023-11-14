@@ -16,7 +16,7 @@
     }
 
     li:hover,
-    .cart span:hover+li {
+    .cart span:hover + li {
       color: white;
 
       &::after {
@@ -39,7 +39,7 @@
       transition: 0.3s;
     }
 
-    .cart {
+    .countProduct {
       position: relative;
 
       span {

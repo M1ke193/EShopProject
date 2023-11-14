@@ -3,12 +3,13 @@ import style from "./style.module.scss";
 import { Button } from "src/components/base/button";
 import ProductStar from "../product-star";
 import ImageSlideProduct from "./ImageProduct";
-import { useAppDispatch } from "src/store/hooks";
+import { useAppDispatch, useAppSelector } from "src/store/hooks";
 import { addItemToCart } from "src/store/slices/cart-slices";
 import { IProduct, ICartProduct } from "src/common/interface";
 import { useParams, useNavigate } from "react-router-dom";
 import CountButton from "../base/count-button";
 import fakeData from "src/views/fakeData.json";
+import { addItemToWishlist } from "src/store/slices/wishlist-slices";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   product?: IProduct;
@@ -21,6 +22,7 @@ const DetailProduct = (props: Props) => {
   const [productDetail, setProductDetail] = useState<IProduct>();
   const [colorPos, setColorPos] = useState(0);
   const [productQuantity, setProductQuantity] = useState(0);
+  const wishlistArr = useAppSelector((s) => s.wishlistProduct.wishlistArr);
   const dispatch = useAppDispatch();
   const params = useParams();
   const navigate = useNavigate();
@@ -28,6 +30,13 @@ const DetailProduct = (props: Props) => {
   const handleSetProductQuantity = (quantity: number) => {
     setProductQuantity(quantity);
   };
+
+  const processProductProps = (product: IProduct | undefined) => {
+    const findItem = wishlistArr.find((item) => item.id === product?.id);
+    if (findItem) return findItem;
+    return product;
+  };
+  console.log(123123);
 
   const renderChillRateStar = () => {
     return (
@@ -71,17 +80,26 @@ const DetailProduct = (props: Props) => {
     }
   };
 
+  const handleAddItemToWishlist = (item: IProduct) => {
+    const addItem = {
+      ...item,
+      wishlist: true,
+    };
+    dispatch(addItemToWishlist(addItem));
+    setProductDetail(addItem);
+  };
+
   useEffect(() => {
     if (type === "page") {
       const { id } = params;
       const product = fakeData.find((item) => item.id === id);
-      product ? setProductDetail(product) : navigate("/");
+      product ? setProductDetail(processProductProps(product)) : navigate("/");
     }
   }, []);
 
   useEffect(() => {
     if (modalStatus === true) {
-      setProductDetail(props.product);
+      setProductDetail(processProductProps(props.product));
     } else if (modalStatus === false) {
       setProductQuantity(0);
       setColorPos(0);
@@ -143,8 +161,19 @@ const DetailProduct = (props: Props) => {
           >
             Add To Cart
           </Button>
-          <div className={style.wish}>
-            <i className="fa-regular fa-heart "></i>
+          <div
+            onClick={() =>
+              productDetail && handleAddItemToWishlist(productDetail)
+            }
+            className={style.wish}
+          >
+            <i
+              className={
+                productDetail?.wishlist
+                  ? `fa-solid fa-heart ${style.redIcon}`
+                  : "fa-regular fa-heart"
+              }
+            ></i>
           </div>
         </div>
       </div>

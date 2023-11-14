@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from "react";
 import { Button } from "src/components/base/button";
 import logo from "/logo.png";
 import "./styles.scss";
+import "./responsive.scss";
 import { Outlet, useNavigate } from "react-router-dom";
 
 interface Props {
@@ -45,13 +46,20 @@ const AuthLayout = ({ type }: Props) => {
         </div>
       </div>
       <div className="right-login">
-        <div className="right-login__singUp">
-          <span>
-            {type !== "login" ? "Already a member?" : "Not a member?"}
-          </span>
-          <Button color="red" variant="contained" onClick={handleNavigate}>
-            {type !== "login" ? "Sign In" : "Sign Up Now"}
-          </Button>
+        <div className="right-wrap-logo">
+          <img
+            onClick={() => navigate("/")}
+            className="logo-right"
+            src={logo}
+          />
+          <div className="singUp_action">
+            <span>
+              {type !== "login" ? "Already a member?" : "Not a member?"}
+            </span>
+            <Button color="red" variant="contained" onClick={handleNavigate}>
+              {type !== "login" ? "Sign In" : "Sign Up Now"}
+            </Button>
+          </div>
         </div>
         <div className="login-form">
           <h2>

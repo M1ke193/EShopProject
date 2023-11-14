@@ -9,9 +9,11 @@
     display: block;
     font-family: $f-base;
     height: 100%;
-    width: 100%;
+    width: 30%;
     text-decoration: none;
     color: black;
     margin-right: 50px;
   }
+}
+@media (max-width: $breakpoint-large) {
 }

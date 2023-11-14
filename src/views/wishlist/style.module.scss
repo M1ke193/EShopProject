@@ -1,0 +1,88 @@
+@import "src/assets/styles/variables";
+
+.wishlist {
+  font-family: $f-base;
+  min-height: 50vh;
+
+  .wishTable {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 80px;
+
+    .headerRow {
+      padding: 18px 15px;
+      font-size: 20px;
+    }
+
+    .ProductRow {
+      font-size: 20px;
+
+      td {
+        padding: 15px;
+      }
+
+      .closeButtonRow {
+        padding: 15px 15px 15px 0px;
+      }
+
+      .Price,
+      .action,
+      .stockStatus {
+        color: $gray;
+        font-weight: 500;
+      }
+      .action {
+        position: relative;
+        button {
+          font-family: $f-base;
+          font-size: 14px;
+          font-weight: bold;
+          padding: 14px 20px;
+          background-color: transparent;
+          border: 2px solid #efefef;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        button:hover {
+          background-color: $blue;
+          border-color: $blue;
+          color: white;
+        }
+      }
+    }
+
+    .nameRow {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      .imgwrap {
+        max-width: 80px;
+        max-height: 80px;
+
+        img {
+          border-radius: 10px;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      span {
+        font-size: 20px;
+        word-break: break-word;
+        font-weight: 500;
+        position: relative;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      span:hover {
+        color: $blue;
+      }
+    }
+  }
+}
+.nowish {
+  text-align: center;
+}

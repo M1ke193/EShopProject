@@ -9,6 +9,9 @@ interface Props {
 const IconGroup = (props: Props) => {
   const navigate = useNavigate();
   const products = useAppSelector((state) => state.cartProduct.cartArr);
+  const wishlistArr = useAppSelector(
+    (state) => state.wishlistProduct.wishlistArr
+  );
 
   return (
     <div className={style.icongroup}>
@@ -16,10 +19,19 @@ const IconGroup = (props: Props) => {
         <li onClick={() => props.handleSearchPopup()}>
           <i className="fa-solid fa-magnifying-glass fa-xl"></i>
         </li>
-        <li>
-          <i className="fa-regular fa-heart fa-xl"></i>
-        </li>
-        <div onClick={() => navigate("/shop/cart")} className={style.cart}>
+        <div
+          onClick={() => navigate("/shop/wishlist")}
+          className={style.countProduct}
+        >
+          {wishlistArr.length > 0 && <span>{wishlistArr.length}</span>}
+          <li>
+            <i className="fa-regular fa-heart fa-xl"></i>
+          </li>
+        </div>
+        <div
+          onClick={() => navigate("/shop/cart")}
+          className={style.countProduct}
+        >
           <span>{products?.length}</span>
           <li>
             <i className="fa-solid fa-cart-shopping fa-xl"></i>

@@ -12,6 +12,7 @@ export interface IProduct {
   imgList: string[];
   desc: string;
   color: string[];
+  wishlist?: boolean;
 }
 
 export interface ICartProduct extends IProduct {

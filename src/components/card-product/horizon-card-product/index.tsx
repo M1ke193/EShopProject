@@ -2,6 +2,8 @@ import style from "./style.module.scss";
 import { useNavigate } from "react-router-dom";
 import { IProduct } from "src/common/interface";
 import ProductStar from "src/components/product-star";
+import { useAppDispatch, useAppSelector } from "src/store/hooks";
+import { addItemToWishlist } from "src/store/slices/wishlist-slices";
 
 interface Props {
   product: IProduct;
@@ -9,11 +11,27 @@ interface Props {
 }
 
 const HorizonCardProduct = (props: Props) => {
-  const { className = "", product } = props;
+  const { className = "" } = props;
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const wishlistArr = useAppSelector((s) => s.wishlistProduct.wishlistArr);
+  const processProductProps = (product: IProduct) => {
+    const findItem = wishlistArr.find((item) => item.id === product.id);
+    if (findItem) return findItem;
+    return product;
+  };
+  const product = processProductProps(props.product);
 
   const hadleNavigate = () => {
     navigate(`/product/${product.id}`, { state: { navigateProduct: product } });
+  };
+
+  const handleAddItemToWishlist = (item: IProduct) => {
+    const addItem = {
+      ...item,
+      wishlist: true,
+    };
+    dispatch(addItemToWishlist(addItem));
   };
 
   return (
@@ -37,8 +55,17 @@ const HorizonCardProduct = (props: Props) => {
         </div>
       </div>
       <div className={style.groupButton}>
-        <button className={style.wishButton}>
-          <i className={"fa-regular fa-heart"} />
+        <button
+          onClick={() => handleAddItemToWishlist(props.product)}
+          className={style.wishButton}
+        >
+          <i
+            className={
+              product.wishlist
+                ? `fa-solid fa-heart ${style.redIcon}`
+                : "fa-regular fa-heart"
+            }
+          />
         </button>
         <button onClick={hadleNavigate} className={style.buyButton}>
           Buy Product

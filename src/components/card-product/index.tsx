@@ -1,6 +1,6 @@
 import PrimaryCardProduct from "./primary-card-product";
 import { IProduct } from "src/common/interface";
-import HorizonCardProduct from "./ horizon-card-product";
+import HorizonCardProduct from "./horizon-card-product";
 
 interface Props {
   type: "primary" | "horizontal";

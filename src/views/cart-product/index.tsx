@@ -1,5 +1,5 @@
 import style from "./style.module.scss";
-import { HEADER_CART_TABLE } from "./modal";
+import { HEADER_CART_TABLE } from "src/common/constants";
 import CheckBox from "src/components/base/checkbox";
 import { useAppSelector, useAppDispatch } from "src/store/hooks";
 import { ICartProduct } from "src/common/interface";

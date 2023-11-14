@@ -107,6 +107,10 @@
 
     .wishButton {
       padding: 8px 18px;
+
+      .redIcon {
+        color: red;
+      }
     }
 
     button:hover {
