@@ -36,7 +36,6 @@ const DetailProduct = (props: Props) => {
     if (findItem) return findItem;
     return product;
   };
-  console.log(123123);
 
   const renderChillRateStar = () => {
     return (

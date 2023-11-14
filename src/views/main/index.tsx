@@ -9,7 +9,6 @@ import { Button } from "src/components/base/button";
 import { useNavigate } from "react-router-dom";
 import IconAwesome from "src/components/title/icon-awesome";
 import CardProduct from "src/components/card-product";
-import { useAppSelector } from "src/store/hooks";
 
 const MainPage = () => {
   const navigate = useNavigate();
