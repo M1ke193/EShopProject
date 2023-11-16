@@ -12,6 +12,7 @@ export interface IProduct {
   imgList: string[];
   desc: string;
   color: string[];
+  wishlist?: boolean;
 }
 
 export interface ICartProduct extends IProduct {
@@ -22,4 +23,11 @@ export interface ICartProduct extends IProduct {
 export interface ICategory {
   name: string;
   image: string;
+}
+
+export interface IuserData {
+  email: string;
+  img: string;
+  name: string;
+  password: string;
 }

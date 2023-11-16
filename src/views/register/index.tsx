@@ -29,6 +29,7 @@ const RegisterPage = () => {
           id="name"
           label="User Name"
           placeholder="Enter Your User Name"
+          error={errors?.name}
         />
         {errors?.name && <Errortext>{errors.name.message}</Errortext>}
       </div>
@@ -38,6 +39,7 @@ const RegisterPage = () => {
           id="email"
           label="Email"
           placeholder="Enter Your Email"
+          error={errors?.email}
         />
         {errors?.email && <Errortext>{errors.email.message}</Errortext>}
       </div>
@@ -48,6 +50,7 @@ const RegisterPage = () => {
           label="Password"
           placeholder="Enter Your Password"
           type="password"
+          error={errors?.password}
         />
         {errors?.password && <Errortext>{errors.password.message}</Errortext>}
       </div>

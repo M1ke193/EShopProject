@@ -72,7 +72,7 @@
     }
   }
 
-  .titleOrdered {
+  .titleCart {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -149,5 +149,9 @@
         width: 100%;
       }
     }
+  }
+  .noCart {
+    text-align: center;
+    margin: 40px;
   }
 }

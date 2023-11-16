@@ -6,13 +6,17 @@ import style from "./style.module.scss";
 import { validator } from "./validator";
 import { Link } from "react-router-dom";
 import Errortext from "src/components/base/error-text";
-
+import user from "./user.json";
+import { showToast } from "src/utils/showToast";
+import { useNavigate } from "react-router-dom";
 interface LoginInputs {
   email: string;
   password: string;
 }
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -20,7 +24,14 @@ const LoginPage = () => {
   } = useForm<LoginInputs>();
 
   const onsubmit: SubmitHandler<LoginInputs> = (data) => {
-    console.log(data);
+    const userData = user.find((item) => item.email === data.email);
+    if (userData?.password === data.password) {
+      showToast("Login Succsessful", "success");
+      sessionStorage.setItem("user", JSON.stringify(userData));
+      navigate("/");
+    } else {
+      showToast("Email or password is incorrect", "error");
+    }
   };
 
   return (
@@ -31,6 +42,7 @@ const LoginPage = () => {
           id="email"
           label="Email"
           placeholder="Enter Your Email"
+          error={errors?.email}
         />
         {errors?.email && <Errortext>{errors.email.message}</Errortext>}
       </div>
@@ -41,6 +53,7 @@ const LoginPage = () => {
           label="Password"
           placeholder="Enter Your Password"
           type="password"
+          error={errors?.password}
         />
         {errors?.password && <Errortext>{errors.password.message}</Errortext>}
       </div>

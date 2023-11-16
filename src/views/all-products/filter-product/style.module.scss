@@ -59,11 +59,11 @@
     width: 100%;
   }
 
-  .groupTitle.active+.cateGroup {
+  .groupTitle.active + .cateGroup {
     display: block;
   }
 
-  .groupTitle.active+.groupPrice {
+  .groupTitle.active + .groupPrice {
     display: flex;
   }
 
@@ -129,13 +129,13 @@
         border-color: #777;
       }
 
-      .customPrice {
-        outline: none;
-        box-sizing: border-box;
-        width: 65px;
-        padding: 5px;
-        text-align: center;
-      }
+      // .customPrice {
+      //   outline: none;
+      //   box-sizing: border-box;
+      //   width: 65px;
+      //   padding: 5px;
+      //   text-align: center;
+      // }
     }
   }
 }

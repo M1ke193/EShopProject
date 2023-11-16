@@ -88,6 +88,10 @@ const AllProductsPage = () => {
             ) : (
               <Button
                 disabled={lengthOffAllProduct <= limitProduct}
+                style={{
+                  visibility:
+                    lengthOffAllProduct <= limitProduct ? "hidden" : "visible",
+                }}
                 onClick={handleLoadMore}
                 className={style.button}
                 color="gray"

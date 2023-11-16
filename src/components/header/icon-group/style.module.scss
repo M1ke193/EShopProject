@@ -2,6 +2,7 @@
 
 .icongroup {
   ul {
+    position: relative;
     font-size: 13px;
     display: flex;
     align-items: center;
@@ -13,11 +14,16 @@
       position: relative;
       z-index: 1;
       transition: 0.3s;
+      i {
+        transition: 0.3s;
+      }
     }
 
     li:hover,
-    .cart span:hover+li {
-      color: white;
+    .cart span:hover + li {
+      i {
+        color: white;
+      }
 
       &::after {
         height: 42px;
@@ -39,7 +45,7 @@
       transition: 0.3s;
     }
 
-    .cart {
+    .countProduct {
       position: relative;
 
       span {
@@ -58,6 +64,70 @@
         right: -17px;
         border: 2px solid white;
       }
+    }
+  }
+  .imgWrap {
+    width: 42px;
+    height: 42px;
+  }
+
+  .imgWrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .userPopup {
+    font-family: $f-base;
+    pointer-events: none;
+    cursor: auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: absolute;
+    padding: 20px;
+    width: 250px;
+    background-color: rgb(255, 255, 255);
+    top: 50px;
+    right: -5px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.3s;
+    .nameUser {
+      display: flex;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 0px;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      span {
+        text-align: center;
+      }
+    }
+    Button {
+      margin-bottom: 12px;
+    }
+    .registerUser {
+      font-size: 12px;
+      text-align: center;
+      a {
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        margin-left: 5px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 2px solid #999fae;
+      }
+    }
+    &.activePopup {
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

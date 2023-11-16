@@ -1,5 +1,5 @@
 import style from "./style.module.scss";
-import { HEADER_CART_TABLE } from "./modal";
+import { HEADER_CART_TABLE } from "src/common/constants";
 import CheckBox from "src/components/base/checkbox";
 import { useAppSelector, useAppDispatch } from "src/store/hooks";
 import { ICartProduct } from "src/common/interface";
@@ -8,8 +8,9 @@ import { useNavigate } from "react-router-dom";
 import {
   updateCartProduct,
   deleteCartProduct,
+  clearCartProduct,
   selectedCartProduct,
-  deleteOrderedProduct,
+  clearOrderedProduct,
 } from "src/store/slices/cart-slices";
 import OrderProduct from "./order-product";
 import useScrollToTop from "src/utils/hooks/useScrollToTop";
@@ -126,7 +127,12 @@ const CartProduct = () => {
     <div className={style.cart}>
       {cartArr.length > 0 && (
         <>
-          <h1>Your cart</h1>
+          <div className={style.titleCart}>
+            <h1>Your cart</h1>
+            <span onClick={() => dispatch(clearCartProduct())}>
+              Clear shopping cart
+            </span>
+          </div>
           {renderCartTable(cartArr, false)}
         </>
       )}
@@ -138,15 +144,15 @@ const CartProduct = () => {
         />
       )}
 
-      {cartArr.length === 0 && orderProducts.length === 0 && (
-        <h2 style={{ textAlign: "center" }}>Your Cart Is Emtpy</h2>
+      {cartArr.length === 0 && (
+        <h2 className={style.noCart}>Your Cart Is Emtpy</h2>
       )}
 
       {orderProducts.length > 0 && (
         <>
-          <div className={style.titleOrdered}>
+          <div className={style.titleCart}>
             <h1>Ordered</h1>
-            <span onClick={() => dispatch(deleteOrderedProduct())}>
+            <span onClick={() => dispatch(clearOrderedProduct())}>
               Clear Ordered products
             </span>
           </div>

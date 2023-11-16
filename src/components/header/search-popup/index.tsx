@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import style from "./style.module.scss";
 import { IProduct } from "src/common/interface";
 import CardProduct from "src/components/card-product";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import fakeData from "src/views/fakeData.json";
 
 interface Props {
@@ -14,6 +14,9 @@ const ProductSearch = (props: Props) => {
   const [products, setProducts] = useState<IProduct[]>([]);
   const inputSearchRef = useRef<HTMLInputElement>(null);
   const iconClearRef = useRef<HTMLElement>(null);
+  // const currentPath = useRef("");
+  // const location = useLocation();
+  const navigate = useNavigate();
 
   const debounce = <T extends (...args: any[]) => void>(
     func: T,
@@ -45,23 +48,35 @@ const ProductSearch = (props: Props) => {
     }
   };
 
-  const handleCloseParent = (event: any) => {
-    if (event.target === event.currentTarget) {
-      props.handleSearchPopup();
-    }
+  // const handleCloseParent = (event: any) => {
+  //   if (event.target === event.currentTarget) {
+  //     props.handleSearchPopup();
+  //   }
+  // };
+
+  const handleNavigateDetail = (idProduct: string) => {
+    navigate(`/product/${idProduct}`);
+    props.handleSearchPopup();
   };
 
   const handleClearSearch = () => {
     if (inputSearchRef.current) {
       inputSearchRef.current.value = "";
+      iconClearRef.current?.classList.remove(style.show);
     }
     setProducts([]);
   };
 
+  // useEffect(() => {
+  //   const checkIsNavigate =
+  //     props.showSearch && location.pathname !== currentPath.current;
+  //   checkIsNavigate && props.handleSearchPopup();
+  // }, [location.pathname]);
+
   useEffect(() => {
-    if (!props.showSearch) {
-      handleClearSearch();
-    }
+    !props.showSearch && handleClearSearch();
+    // ? (currentPath.current = location.pathname)
+    // : handleClearSearch();
   }, [props.showSearch]);
 
   return (
@@ -69,7 +84,7 @@ const ProductSearch = (props: Props) => {
       className={`${style.productSearchWrap} ${
         props.showSearch ? style.showSearch : ""
       }`}
-      onClick={(event) => handleCloseParent(event)}
+      // onClick={(event) => handleCloseParent(event)}
     >
       <div className={style.productSearch}>
         <div className={style.searchHeader}>
@@ -93,11 +108,23 @@ const ProductSearch = (props: Props) => {
         <div className={style.searchBody}>
           <div className={style.resutlSearch}>
             <span>{products.length} Result Found</span>
-            <Link to={"/shop"}>View All</Link>
+            <Link onClick={props.handleSearchPopup} to={"/shop"}>
+              View All
+            </Link>
           </div>
           <div className={style.itemResult}>
             {products.map((item) => (
-              <CardProduct key={item.id} type={"horizontal"} product={item} />
+              <div
+                key={item.id}
+                className={style.viewDetail}
+                onClick={() => handleNavigateDetail(item.id)}
+              >
+                <CardProduct
+                  className={style.searchCard}
+                  type={"horizontal"}
+                  product={item}
+                />
+              </div>
             ))}
           </div>
         </div>

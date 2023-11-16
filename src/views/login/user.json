@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Mike Nguyen",
+    "email": "mndx1t@gmail.com",
+    "password": "minh12345",
+    "img": "/avatar.png"
+  },
+  {
+    "name": "John Cena",
+    "email": "cena@gmail.com",
+    "password": "cena12345",
+    "img": "/avatar2.png"
+  }
+]

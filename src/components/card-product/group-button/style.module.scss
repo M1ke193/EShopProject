@@ -16,6 +16,10 @@
     vertical-align: middle;
     text-align: center;
     transition: 0.3s;
+
+    .redIcon {
+      color: red;
+    }
   }
 
   span:hover i {

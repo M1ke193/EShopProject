@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICartProduct } from "src/common/interface";
+import { showToast } from "src/utils/showToast";
 
 const cartData = localStorage.getItem("cart");
 
@@ -24,8 +25,7 @@ const cartSlice = createSlice({
       );
       if (duplicateCart) duplicateCart.quantity += payload.quantity;
       else state.cartArr.push(action.payload);
-
-      alert("Product has been added to cart");
+      showToast(`${payload.name} has been added in your cart`, "success");
     },
 
     updateCartProduct: (state, action: PayloadAction<ICartProduct>) => {
@@ -37,6 +37,7 @@ const cartSlice = createSlice({
         duplicateCart.quantity = payload.quantity;
       }
     },
+
     deleteCartProduct: (
       state,
       action: PayloadAction<{ idProduct: string }>
@@ -45,6 +46,11 @@ const cartSlice = createSlice({
         (item) => item.id !== action.payload.idProduct
       );
     },
+
+    clearCartProduct: (state) => {
+      state.cartArr = [];
+    },
+
     selectedCartProduct: (
       state,
       action: PayloadAction<{ idProduct: string; isChecked?: boolean }>
@@ -60,6 +66,7 @@ const cartSlice = createSlice({
             : payload.isChecked;
       }
     },
+
     orderCartProduct: (state) => {
       const delteSelectedProduct: ICartProduct[] = [];
 
@@ -76,7 +83,8 @@ const cartSlice = createSlice({
         state.cartArr = delteSelectedProduct;
       });
     },
-    deleteOrderedProduct: (state) => {
+
+    clearOrderedProduct: (state) => {
       state.orderProducts = [];
     },
   },
@@ -86,8 +94,9 @@ export const {
   addItemToCart,
   updateCartProduct,
   deleteCartProduct,
+  clearCartProduct,
   selectedCartProduct,
   orderCartProduct,
-  deleteOrderedProduct,
+  clearOrderedProduct,
 } = cartSlice.actions;
 export default cartSlice.reducer;

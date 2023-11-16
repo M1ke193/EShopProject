@@ -17,7 +17,7 @@
     cursor: pointer;
 
     &.require::after {
-      content: '*';
+      content: "*";
       color: red;
     }
   }
@@ -41,5 +41,11 @@
   input:focus {
     outline: none;
     border: 1px solid $blue;
+  }
+  .errorInput:focus {
+    border: 1px solid $red;
+  }
+  .errorInput {
+    border: 1px solid $red;
   }
 }

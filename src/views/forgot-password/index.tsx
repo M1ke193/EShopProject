@@ -26,7 +26,8 @@ const ForgotPage = () => {
           id="email"
           label="Email"
           placeholder="Enter Your Email"
-        ></Input>
+          error={errors?.email}
+        />
         {errors?.email && <Errortext>{errors.email.message}</Errortext>}
       </div>
       <div className={style["login-action"]}>

@@ -2,7 +2,7 @@
   {
     "id": "9",
     "type": "Headphones",
-    "name": "Roco Wireless Headphone",
+    "name": "Sony PULSE 3D Headphone",
     "image": "/product-big-01.webp",
     "bigImg": "/product-38.webp",
     "price": 169,
@@ -11,9 +11,9 @@
     "review": 35,
     "imgList": [
       "/product-big-01.webp",
-      "/product-04.webp",
-      "/product-big-02.webp",
-      "/product-08.webp"
+      "/product-big-01_2.webp",
+      "/product-big-01_3.webp",
+      "/product-big-01_4.webp"
     ],
     "desc": "Headphones provide a personalized audio experience with over-ear and in-ear options. Sleek designs, noise cancellation, and Bluetooth add convenience, making them essential for music and gaming on the go.",
     "color": ["black"]
@@ -21,40 +21,40 @@
   {
     "id": "10",
     "type": "Smartwatches",
-    "name": "Smart Digital Watch",
+    "name": "Apple Watch Series 6",
     "image": "/product-watch.png",
     "bigImg": "/product-39.webp",
-    "price": 199,
-    "salePrice": 89,
+    "price": 399.99,
+    "salePrice": 379.99,
     "rate": 4,
     "review": 1525,
     "imgList": [
       "/product-watch.png",
-      "/product-04.webp",
-      "/product-big-02.webp",
-      "/product-08.webp"
+      "/product-watch_02.png",
+      "/product-watch_03.png",
+      "/product-watch_04.png"
     ],
-    "desc": "Smartwatches seamlessly blend style and functionality, providing fitness tracking, notifications, apps, and connectivity. These wearables offer a holistic approach to health and communication, enhancing daily life.",
+    "desc": "The Apple Watch Series 6 offers advanced health and fitness features, a stunning Retina display, and seamless integration with your iPhone.",
     "color": ["black", "blue"]
   },
   {
     "id": "6",
     "type": "Accessories",
-    "name": "Bass Meets Clarity",
+    "name": "Amazon Echo 3rd Gen",
     "image": "/product-05.webp",
     "bigImg": "/product-5.webp",
     "price": 400,
     "salePrice": 232,
-    "optionimg": "/product-04.webp",
+    "optionimg": "/product_6.png",
     "rate": 2,
     "review": 2,
     "imgList": [
       "/product-05.webp",
-      "/product-15.webp",
-      "/product-08.webp",
-      "/product-04.webp"
+      "/product_6.png",
+      "/product_6_2.png",
+      "/product_6_3.png"
     ],
-    "desc": "The LED backlighting on the keyboard is a fantastic feature, creating a cozy workspace or gaming environment and adding a stylish touch.",
+    "desc": "Encapsulates the essence of our revolutionary audio innovation. Resonating bass with unparalleled clarity, redefining your auditory experience.",
     "color": ["black"]
   }
 ]

@@ -15,7 +15,7 @@ const ProductHeader = (props: Props) => {
       <div className={style.header}>
         <TopHeader color="dark" className={style.headertop}></TopHeader>
       </div>
-      <div className={style["space-headbar"]}></div>
+      <div className={style["space-headbar"]} />
       <div className={style["headbar-container"]}>
         <div className={style["headerbarWrap"]}>
           <div className={style["header-bar"]}>
@@ -24,16 +24,18 @@ const ProductHeader = (props: Props) => {
                 <img src={logo} />
               </Link>
             </div>
-            <NavHeader></NavHeader>
+            <NavHeader />
             <IconGroup handleSearchPopup={props.handleSearchPopup}></IconGroup>
           </div>
         </div>
+
         <div className={style.campain}>
           <div className={style.campainTitle}>
             <span>STUDENT NOW GET 10% OFF: </span>
             <Link to="/"> GET OFFER</Link>
           </div>
         </div>
+        
       </div>
     </>
   );

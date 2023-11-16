@@ -1,4 +1,4 @@
-import { KeyboardEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import fakeData from "src/views/main/slide-category/fakeData.json";
 import { ICategory } from "src/common/interface";
@@ -15,26 +15,27 @@ const FilterProduct = (prop: props) => {
   const { setCateRadio, setPriceGroup, cateFilter, priceFilter } = prop;
   const [cate, setCate] = useState<ICategory[]>([]);
   const [price, setPrice] = useState<number[]>([]);
-  const customInputRef = useRef<HTMLInputElement>(null);
 
-  const handleKeyPressInput = (e: KeyboardEvent<HTMLInputElement>) => {
-    const charCode = e.key;
-    if (isNaN(Number(charCode)) && charCode !== "Backspace") {
-      e.preventDefault();
-    }
-    if (e.key === "Enter") {
-      customInputRef.current?.blur();
-    }
-  };
+  // const customInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFilterCustomInput = () => {
-    if (customInputRef.current) {
-      const filterValue = customInputRef.current.value;
-      const convertNum = isNaN(Number(filterValue)) ? 0 : Number(filterValue);
-      setPriceGroup(convertNum);
-      customInputRef.current.value = convertNum.toString();
-    }
-  };
+  // const handleKeyPressInput = (e: KeyboardEvent<HTMLInputElement>) => {
+  //   const charCode = e.key;
+  //   if (isNaN(Number(charCode)) && charCode !== "Backspace") {
+  //     e.preventDefault();
+  //   }
+  //   if (e.key === "Enter") {
+  //     customInputRef.current?.blur();
+  //   }
+  // };
+
+  // const handleFilterCustomInput = () => {
+  //   if (customInputRef.current) {
+  //     const filterValue = customInputRef.current.value;
+  //     const convertNum = isNaN(Number(filterValue)) ? 0 : Number(filterValue);
+  //     setPriceGroup(convertNum);
+  //     customInputRef.current.value = convertNum.toString();
+  //   }
+  // };
 
   const handleActiveFilter = (event: any) => {
     const activeFilterElement = event.currentTarget;
@@ -60,15 +61,15 @@ const FilterProduct = (prop: props) => {
 
   const handleReset = () => {
     prop.handleResetFilter();
-    if (customInputRef.current) {
-      customInputRef.current.value = "0";
-    }
+    // if (customInputRef.current) {
+    //   customInputRef.current.value = "0";
+    // }
   };
 
-  const activeClassForPriceFilter =
-    !priceFilter || priceFilter === Number(customInputRef.current?.value)
-      ? style.activeCirle
-      : "";
+  // const activeClassForPriceFilter =
+  //   !priceFilter || priceFilter === Number(customInputRef.current?.value)
+  //     ? style.activeCirle
+  //     : "";
 
   useEffect(() => {
     setCate(fakeData);
@@ -100,10 +101,11 @@ const FilterProduct = (prop: props) => {
           {price.map((item, index) => (
             <button
               className={`${
-                priceFilter === item &&
-                Number(customInputRef.current?.value) !== item
-                  ? style.activeCirle
-                  : ""
+                // priceFilter === item &&
+                // Number(customInputRef.current?.value) !== item
+                //   ? style.activeCirle
+                //   : ""
+                priceFilter === item ? style.activeCirle : ""
               } ${style.filterButton}`}
               key={index}
               onClick={() => setPriceGroup(item)}
@@ -111,7 +113,7 @@ const FilterProduct = (prop: props) => {
               {item}
             </button>
           ))}
-          <input
+          {/* <input
             ref={customInputRef}
             defaultValue={0}
             className={`${style.customPrice} ${style.filterButton} ${activeClassForPriceFilter}`}
@@ -119,7 +121,7 @@ const FilterProduct = (prop: props) => {
             onKeyDown={handleKeyPressInput}
             onBlur={handleFilterCustomInput}
             onClick={() => setPriceGroup(Number(customInputRef.current?.value))}
-          />
+          /> */}
         </div>
       </div>
       <Button
