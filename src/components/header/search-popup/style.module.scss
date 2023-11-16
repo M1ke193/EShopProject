@@ -11,6 +11,9 @@
   visibility: hidden;
   opacity: 0;
   transition: 0.3s;
+  left: 0;
+
+
 
   &.showSearch {
     opacity: 1;
@@ -32,6 +35,10 @@
     transform: translate(-50%, -50%);
     overflow: auto;
     overscroll-behavior: contain;
+
+    @media (max-width: 960px) {
+      width: 90%;
+    }
 
     .searchHeader {
       position: relative;
@@ -105,8 +112,10 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+
         .viewDetail {
           cursor: pointer;
+
           .searchCard {
             pointer-events: none;
           }
@@ -131,6 +140,14 @@
     color: $gray;
     cursor: pointer;
     transition: 0.3s;
+
+    @media (max-width: 960px) {
+      background-color: $blue;
+      color: white;
+      top: 2vh;
+      right: 0px;
+      transform: translate(0, 0);
+    }
   }
 
   .CloseButton:hover {

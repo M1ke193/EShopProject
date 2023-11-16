@@ -5,6 +5,14 @@
   list-style: none;
   gap: 40px;
 
+  @media (min-width: 961px) and (max-width: 1200px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+
   .link {
     display: block;
     font-family: $f-base;
@@ -14,6 +22,4 @@
     color: black;
     margin-right: 50px;
   }
-}
-@media (max-width: $breakpoint-large) {
 }

@@ -7,6 +7,16 @@
   font-family: $f-base;
   border-top: 2px solid $light;
 
+  @media (max-width: 960px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+
+    .account {
+      justify-self: center;
+    }
+  }
+
   >div {
     display: flex;
     flex-direction: column;

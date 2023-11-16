@@ -9,12 +9,24 @@
   align-items: center;
   user-select: none;
 
+  @media (max-width: 500px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .titleWrap {
     width: 65%;
 
     .title {
       display: block;
       position: relative;
+
+      @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
       .icon-title {
         margin-bottom: 16px;
@@ -27,6 +39,16 @@
         padding: 0;
         line-height: 1.2;
         animation: fade 1s ease-in-out 0s 1 normal none;
+
+        @media (max-width: 960px) {
+          font-size: 40px;
+        }
+
+        @media (max-width: 500px) {
+          font-size: 25px;
+          text-align: center;
+          margin: 0px 0px 10px 0px;
+        }
       }
 
       .carticon {
@@ -67,6 +89,13 @@
     overflow: hidden;
     left: 40px;
 
+    @media (max-width: 500px) {
+      height: 50%;
+      top: -5vh;
+      left: calc(30% - 40px);
+      // transform: translateX(-50vh);
+    }
+
     .slide {
       display: flex;
       align-items: center;
@@ -78,6 +107,10 @@
 
       div {
         position: relative;
+
+        @media (max-width: 500px) {
+          transform: scale(0.8);
+        }
 
         .saleTitle {
           position: absolute;
@@ -107,6 +140,7 @@
             font-size: 18px;
             font-weight: 700;
           }
+
         }
 
         .visibleTitle {
@@ -126,13 +160,13 @@
         max-width: 22.5%;
         max-height: 75%;
         opacity: 1;
-        @include respond-maxsize($breakpoint-large, 17.7%);
+
       }
 
       .smallImgWarp {
         max-width: 6.7%;
         max-height: 23%;
-        transform: translateY(11vh);
+        transform: translateY(102px);
       }
 
       .bigImgWarp,
@@ -140,50 +174,100 @@
         transition: 0.5s;
       }
 
-      .visible {
-        opacity: 0;
+
+      @media (min-width: 1100px) and (max-width: 1300px) {
+        .bigImgWarp {
+          max-width: 17.7%;
+          max-height: 75%;
+          opacity: 1;
+        }
+
+        .smallImgWarp {
+          max-width: 6.7%;
+          max-height: 23%;
+          transform: translateY(102px);
+        }
       }
+
+      @media (min-width: 960px) and (max-width: 1100px) {
+        .bigImgWarp {
+          max-width: 15.7%;
+          max-height: 75%;
+          opacity: 1;
+        }
+
+        .smallImgWarp {
+          max-width: 6.7%;
+          max-height: 23%;
+          transform: translateY(90px);
+        }
+      }
+
+      @media (max-width: 960px) {
+        .bigImgWarp {
+          max-width: 14%;
+          max-height: 75%;
+          opacity: 1;
+        }
+
+        .smallImgWarp {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .bigImgWarp {
+          max-width: 11%;
+          max-height: 75%;
+          opacity: 1;
+        }
+      }
+    }
+
+    .visible {
+      opacity: 0;
+    }
+  }
+}
+
+.buttonslide {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  width: max-content;
+
+  span {
+    border-radius: 6px;
+    margin: 0 5px;
+    width: 24px;
+    transition: 0.1s;
+    cursor: pointer;
+
+    .button {
+      background-color: white;
+      border: none;
+      cursor: pointer;
+      height: 4px;
+      width: 24px;
+      border-radius: 6px;
+      outline: none;
+      box-shadow: 0 16px 32px 0 hsla(0, 0%, 40%, 0.06);
+      opacity: 0.5;
+      transition: all 0.4s ease-out 0s;
+    }
+
+    .button.active {
+      opacity: 1;
+      width: 34px;
+      background-color: $red;
     }
   }
 
-  .buttonslide {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    display: flex;
-    width: max-content;
-
-    span {
-      border-radius: 6px;
-      margin: 0 5px;
-      width: 24px;
-      transition: 0.1s;
-      cursor: pointer;
-
-      .button {
-        background-color: white;
-        border: none;
-        cursor: pointer;
-        height: 4px;
-        width: 24px;
-        border-radius: 6px;
-        outline: none;
-        box-shadow: 0 16px 32px 0 hsla(0, 0%, 40%, 0.06);
-        opacity: 0.5;
-        transition: all 0.4s ease-out 0s;
-      }
-
-      .button.active {
-        opacity: 1;
-        width: 34px;
-        background-color: $red;
-      }
-    }
-
-    span:has(.button.active) {
-      width: 34px;
-    }
+  span:has(.button.active) {
+    width: 34px;
   }
 }

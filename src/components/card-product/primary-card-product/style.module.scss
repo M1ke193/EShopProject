@@ -83,7 +83,7 @@
     font-weight: 500;
     margin: 20px 0px 10px;
     cursor: pointer;
-    width: 300px;
+    width: 100%;
     @include respond-maxsize($breakpoint-large, 250px);
   }
 
