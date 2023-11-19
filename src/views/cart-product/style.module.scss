@@ -3,6 +3,12 @@
 .cart {
   font-family: $f-base;
   min-height: 50vh;
+  position: relative;
+
+  @media (max-width: 560px) {
+    overflow-x: auto;
+  }
+
 
   .cartTable {
     width: 100%;
@@ -16,6 +22,10 @@
 
     .ProductRow {
       font-size: 20px;
+
+      @media (max-width: 560px) {
+        font-size: 16px;
+      }
 
       .checkbox {
         height: 18px;
@@ -49,6 +59,7 @@
       .imgwrap {
         max-width: 80px;
         max-height: 80px;
+        position: relative;
 
         img {
           border-radius: 10px;
@@ -65,7 +76,16 @@
         position: relative;
         cursor: pointer;
         transition: 0.3s;
+
+        @media (max-width: 960px) {
+          font-size: 16px;
+        }
+
+        @media (max-width: 870px) {
+          font-size: 0px;
+        }
       }
+
       span:hover {
         color: $blue;
       }
@@ -77,6 +97,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
+
+    @media (max-width: 300px) {
+      padding-top: 50px;
+    }
 
     span {
       color: $blue;
@@ -101,7 +127,15 @@
     font-size: 16px;
     margin: 40px 0px;
 
+    @media (max-width: 560px) {
+      width: 250px;
+      font-size: 12px;
+      transform: translateX(0);
+      left: 50%;
+    }
+
     .order {
+
       .subtotalOrder,
       .shipping,
       .total {
@@ -150,8 +184,13 @@
       }
     }
   }
+
   .noCart {
     text-align: center;
     margin: 40px;
+
+    @media (max-width: 300px) {
+      padding-top: 50px;
+    }
   }
 }

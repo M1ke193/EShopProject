@@ -38,8 +38,16 @@ const TopSlide = () => {
   }, []);
 
   useEffect(() => {
+    let positionSlide = 0;
     if (slideAnimate && slideElementRef.current) {
-      const positionSlide = -activeBtn * 6.7;
+      // Kiểm tra chiều rộng màn hình
+      if (window.innerWidth < 500) {
+        // Nếu chiều rộng màn hình nhỏ hơn 500px, gán giá trị -5.2 cho positionSlide
+        positionSlide = -activeBtn + 2.5;
+      } else {
+        // Ngược lại, sử dụng giá trị ban đầu -activeBtn - 6.7
+        positionSlide = -activeBtn * 6.7;
+      }
       slideElementRef.current.style.transform = `translateX(${positionSlide}%)`;
       setslideAnimate(true);
     }
@@ -76,7 +84,9 @@ const TopSlide = () => {
                 className={`${
                   activeBtn === index ? style.bigImgWarp : style.smallImgWarp
                 } 
-                  ${index >= activeBtn + 2 && style.visible}`}
+                  ${index >= activeBtn + 2 && style.visible} ${
+                  index === products.length && style.lastImg // this class for resposive for last img because it not fix with screen, and im lazy to fix it
+                }`}
               >
                 <img key={index + item.id} src={item.bigImg} />
                 <div

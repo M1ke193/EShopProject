@@ -70,7 +70,10 @@ const CartProduct = () => {
           )}
         </td>
         <td className={style.nameRow}>
-          <div className={style.imgwrap}>
+          <div
+            className={style.imgwrap}
+            onClick={() => navigate(`/product/${item.id}`)}
+          >
             <img src={item.image} />
           </div>
           <span onClick={() => navigate(`/product/${item.id}`)}>

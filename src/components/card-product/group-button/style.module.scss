@@ -4,6 +4,10 @@
   align-items: center;
   gap: 9px;
 
+  @media (max-width: 960px) {
+    display: none;
+  }
+
   span {
     cursor: pointer;
     position: relative;

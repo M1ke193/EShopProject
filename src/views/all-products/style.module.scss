@@ -9,12 +9,25 @@
     font-weight: bold;
     padding: 45px 0;
     border-bottom: 2px solid $light;
+
+    @media (max-width:460px) {
+      text-align: center;
+      font-size: 32px;
+    }
+
+    @media (max-width:300px) {
+      padding-top: 80px;
+    }
   }
 
   .content {
     padding-top: 80px;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width:960px) {
+      display: block;
+    }
 
     .filterWrap {
       flex-basis: 22.5%;
@@ -28,6 +41,33 @@
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 30px;
         align-items: baseline;
+
+        @media (max-width:1200px) {
+          margin-left: 80px;
+        }
+
+        @media (max-width:960px) {
+          margin-left: 0px;
+          justify-items: center;
+          margin-top: 80px;
+        }
+
+        @media (max-width:625px) {
+          .card {
+            text-align: center;
+
+            @media (max-width: 340px) {
+              a {
+                max-width: 220px;
+                max-height: 220px;
+              }
+            }
+          }
+        }
+
+        @media (max-width:300px) {
+          justify-items: flex-start;
+        }
       }
     }
   }

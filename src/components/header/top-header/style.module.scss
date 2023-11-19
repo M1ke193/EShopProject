@@ -9,7 +9,11 @@
     display: flex;
     gap: 20px;
 
-    > * {
+    @media (max-width: 280px) {
+      font-size: 12px;
+    }
+
+    >* {
       padding: 0;
       cursor: pointer;
       color: $gray;

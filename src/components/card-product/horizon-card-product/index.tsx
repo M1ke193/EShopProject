@@ -41,7 +41,7 @@ const HorizonCardProduct = (props: Props) => {
       </a>
       <div className={style.detailProduct}>
         <div className={style.groupRate}>
-          <ProductStar rate={product.rate} />
+          <ProductStar rate={product.rate} className={style.rateCard} />
           <span>{`(${product.review})`}</span>
         </div>
         <a onClick={hadleNavigate} className={style.productName}>

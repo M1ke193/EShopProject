@@ -6,13 +6,24 @@
   width: 100%;
   height: 100%;
   padding: 10px 0px;
-  background-color: #292930;
+  position: relative;
 
   .headertop {
-    padding: 0 15px;
-    margin: 0 14vh;
-    @include respond-margin($breakpoint-large, 3vh);
+    padding: 0 15px 15px;
   }
+}
+
+//write mixin for this optimize code
+.header::after {
+  content: "";
+  position: absolute;
+  width: 101vw;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  top: 2px;
+  z-index: -1;
+  background-color: #292930;
 }
 
 .space-headbar {
@@ -24,7 +35,8 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 37.9px;
+  top: 45px;
+
 
   .headerbarWrap {
     height: 80px;
@@ -35,6 +47,19 @@
     align-items: flex-end;
     z-index: 99;
 
+    //write mixin for this optimize code
+    &::after {
+      content: "";
+      position: absolute;
+      width: 101vw;
+      height: 82px;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      top: 14px;
+      z-index: -1;
+      background-color: white;
+    }
+
     .header-bar {
       display: flex;
       align-items: center;
@@ -42,10 +67,13 @@
       background-color: white;
       height: 80px;
       width: 100%;
-      padding: 0px calc(14vh + 20px);
 
-      @media (max-width: $breakpoint-large) {
-        padding: 0px calc(3vh + 20px);
+      @media (max-width: 500px) {
+        padding: 0px 15px;
+      }
+
+      @media (max-width: 300px) {
+        padding: 10px 15px;
       }
 
       .header-brand {
@@ -54,6 +82,18 @@
         img {
           vertical-align: middle;
           max-width: 130px;
+
+          @media (min-width: 960px) and (max-width: 1084px) {
+            max-width: 110px;
+          }
+
+          @media (max-width: 500px) {
+            max-width: 95px;
+          }
+
+          @media (max-width: 299px) {
+            max-width: 115px;
+          }
         }
       }
     }
@@ -62,17 +102,34 @@
   .campain {
     display: flex;
     justify-content: center;
-    background-image: url("/event.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
+    position: relative;
     padding: 22px 18px;
 
+    //write mixin for this optimize code
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url("/event.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50%;
+      width: 101vw;
+      height: 100%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      top: 13px;
+      z-index: -1;
+    }
+
     .campainTitle {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       font-family: $f-base;
       font-size: 16px;
       color: white;
       font-weight: 700;
+      text-align: center;
 
       a {
         text-decoration: underline;
@@ -82,6 +139,126 @@
 
       a:hover {
         color: #ff497c;
+      }
+    }
+  }
+}
+
+@media (min-width: 100px) {
+  .headbar-container {
+    .headerbarWrap {
+      height: 140px;
+      justify-content: center;
+      align-items: center;
+
+      .header-bar {
+        height: 100px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) {
+  .headbar-container {
+    .headerbarWrap {
+      justify-content: flex-start;
+      align-items: flex-end;
+      height: 80px;
+
+      .header-bar {
+        justify-content: space-between;
+        height: 80px;
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}
+
+@media (min-width: 370px) {
+  .header {
+    .headertop {
+      margin: 0px 5%;
+    }
+  }
+  .headbar-container {
+    .headerbarWrap {
+      margin: 0px 5%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    .headertop {
+      margin: 0px 7%;
+    }
+  }
+
+  .headbar-container {
+    .headerbarWrap {
+      margin: 0px 7%;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .header {
+    .headertop {
+      margin: 0px 2%;
+    }
+  }
+
+  .headbar-container {
+    .headerbarWrap {
+      margin: 0px 2%;
+    }
+  }
+}
+
+@media (min-width: 1030px) {
+  .header {
+    .headertop {
+      margin: 0px 5%;
+    }
+  }
+
+  .headbar-container {
+    .headerbarWrap {
+      margin: 0px 5%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    .headertop {
+      margin: 0px 2.5%;
+    }
+  }
+
+  .headbar-container {
+    .headerbarWrap {
+      margin: 0px 2.5%;
+    }
+  }
+}
+
+@media (min-width: 1350px) {
+  .header {
+    .headertop {
+      margin: 0px 0px;
+      padding: 0px 0px 15px;
+    }
+  }
+
+  .headbar-container {
+    .headerbarWrap {
+      margin: 0px 0px;
+
+      .header-bar {
+        margin: 0px 0px;
       }
     }
   }

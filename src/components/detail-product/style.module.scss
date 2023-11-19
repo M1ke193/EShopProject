@@ -5,6 +5,11 @@
   justify-content: flex-start;
   font-family: $f-base;
 
+  @media (max-width: 960px) {
+    position: relative;
+    display: block;
+  }
+
   .slideGroup {
     display: flex;
     flex-basis: 59.95%;
@@ -28,6 +33,16 @@
         cursor: pointer;
         border: 2px solid transparent;
         transition: 0.2s;
+
+        @media (max-width: 500px) {
+          width: 60px;
+          width: 60px;
+        }
+
+        @media (max-width: 450px) {
+          width: 55px;
+          width: 55px;
+        }
       }
 
       .slideItem.activeSlide {
@@ -44,11 +59,16 @@
       overflow: hidden;
       position: relative;
 
+      @media (max-width: 960px) {
+        width: 100%;
+      }
+
       .slider {
         display: flex;
         position: absolute;
         justify-content: flex-start;
         width: calc(100% * 4 - 45px);
+        height: 100%;
         gap: 45px;
         transition: 0.5s;
 
@@ -56,10 +76,27 @@
           flex-basis: calc(100% / 4);
           border-radius: 6px;
 
+          @media (max-width: 960px) {
+            max-width: 25%;
+            max-width: 100%;
+          }
+
           img {
             object-fit: contain;
             height: 100%;
             width: 100%;
+
+            @media (max-width: 450px) {
+              width: 110%;
+            }
+
+            @media (max-width: 360px) {
+              width: 130%;
+            }
+
+            @media (max-width: 310px) {
+              width: 140%;
+            }
           }
         }
       }
@@ -72,6 +109,10 @@
     flex-wrap: wrap;
     flex-basis: 40%;
     z-index: 1;
+
+    @media (max-width: 960px) {
+      margin-top: 40px;
+    }
 
     .startWrap {
       display: flex;
@@ -215,7 +256,13 @@
     .groupbutton {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       align-items: center;
+
+      @media (max-width: 370px) {
+        justify-content: center;
+        row-gap: 20px;
+      }
 
       .count {
         flex-basis: 130px;
@@ -240,6 +287,10 @@
 
         .redIcon {
           color: red;
+        }
+
+        @media (max-width: 410px) {
+          font-size: 14px;
         }
       }
 
@@ -270,14 +321,23 @@
       Button {
         flex-grow: 1;
         margin: 0px 5%;
+
+        @media (max-width: 1125px) {
+          padding: 19px 15px;
+        }
+
+        @media (max-width: 410px) {
+          padding: 19px 5px;
+          font-size: 12px;
+        }
       }
     }
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1350px) {
   .sliderWrap {
-    height: 83vh;
+    height: 100%;
 
     .slider {
       height: 75%;

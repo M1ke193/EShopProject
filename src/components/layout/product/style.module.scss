@@ -1,6 +1,9 @@
 @import "src/assets/styles/mixin";
+
 .productLayout {
   position: relative;
+  margin: auto;
+
   .slidebackgroud {
     position: relative;
     width: 100%;
@@ -37,10 +40,81 @@
       }
     }
   }
+
   .body,
   .footer {
     padding: 30px 15px;
     margin: 0px 14vh;
     @include respond-margin($breakpoint-large, 3vh);
+  }
+}
+
+@media (min-width: 600px) {
+  .productLayout {
+
+    .body,
+    .footer {
+      margin: 0px 5%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .productLayout {
+
+    .body,
+    .footer {
+      margin: 0px 7%;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .productLayout {
+
+    .body,
+    .footer {
+      margin: 0px 2%;
+    }
+  }
+}
+
+@media (min-width: 1030px) {
+  .productLayout {
+
+    .body,
+    .footer {
+      margin: 0px 5%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .productLayout {
+
+    .body,
+    .footer {
+      margin: 0px 2.5%;
+    }
+  }
+}
+
+@media (min-width: 1350px) {
+  .productLayout {
+    width: 1290px;
+
+    .slidebackgroud {
+      .backgroud {
+        width: 100vw;
+        left: 50%;
+        transform: translate(-50%, -20%);
+      }
+    }
+
+    .body,
+    .footer {
+      padding: 30px 0px;
+      margin: 0px 0px;
+    }
   }
 }

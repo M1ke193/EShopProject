@@ -21,7 +21,12 @@ const CategoryPage = () => {
         <div className={style.catePage}>
           <div className={style.loopProduct}>
             {products.map((item, index) => (
-              <CardProduct type={"primary"} key={index} product={item} />
+              <CardProduct
+                type={"primary"}
+                key={index}
+                product={item}
+                className={style.cardCategory}
+              />
             ))}
           </div>
         </div>

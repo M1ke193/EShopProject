@@ -69,7 +69,7 @@ const WishlistPage = () => {
     <div className={style.wishlist}>
       {wishlistArr.length > 0 ? (
         <>
-          <h1>My Wish List</h1>
+          <h1 className={style.wishlistTitle}>My Wish List</h1>
           {renderCartTable(wishlistArr)}
         </>
       ) : (

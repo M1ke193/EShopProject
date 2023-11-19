@@ -13,6 +13,7 @@
   }
 
   .products {
+
     .loopProduct {
       padding-top: 20px;
       display: grid;
@@ -20,16 +21,46 @@
       gap: 30px;
       align-items: baseline;
 
-      @media (max-width: 600px) {
-        margin-left: 130px
+      @media (max-width: 1200px) {
+        margin-left: 4%;
+      }
+
+      @media (max-width: 960px) {
+        margin-left: 12%;
+      }
+
+      @media (max-width: 830px) {
+        margin-left: 8%;
+      }
+
+      @media (max-width: 675px) {
+        margin-left: 28%;
       }
 
       @media (max-width: 500px) {
-        margin-left: 100px
+        margin-left: 22%;
       }
 
-      @media (max-width: 400px) {
-        margin-left: 50px
+      @media (max-width: 440px) {
+        margin-left: 18%;
+        text-align: center;
+      }
+
+      @media (max-width: 390px) {
+        margin-left: 13%;
+      }
+
+      @media (max-width: 320PX) {
+        margin-left: 9%;
+      }
+
+      .cardMain {
+        @media (max-width: 340px) {
+          a {
+            max-width: 220px;
+            max-height: 220px;
+          }
+        }
       }
     }
 
@@ -54,6 +85,14 @@
       margin: 0 0 30px 0;
       font-size: 36px;
       text-align: center;
+
+      @media (max-width: 540px) {
+        font-size: 30px;
+      }
+
+      @media (max-width: 330px) {
+        font-size: 24px;
+      }
     }
 
     .loopMostSold {

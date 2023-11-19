@@ -58,6 +58,7 @@
 
   .detailProduct {
     word-break: break-word;
+    max-width: 90vw;
 
     .productName {
       text-decoration: none;
@@ -72,8 +73,15 @@
     }
 
     .groupPrice {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       font-size: 20px;
       font-weight: 700;
+
+      @media (max-width: 500px) {
+        justify-content: center;
+      }
 
       .oldPrice {
         margin-right: 4px;
@@ -82,20 +90,27 @@
       }
 
       .newPrice {
-        margin: 4px;
+        margin: 0px 4px;
       }
     }
 
     .groupRate {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      margin-bottom: 16px;
 
       @media (max-width: 500px) {
         justify-content: center;
       }
 
+      .rateCard {
+        margin: 0;
+      }
+
       span {
         font-size: 12px;
+
       }
     }
   }

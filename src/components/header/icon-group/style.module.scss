@@ -8,7 +8,20 @@
     align-items: center;
     list-style: none;
     gap: 33px;
-
+    @media (min-width: 960px) and (max-width: 1084px) {
+      gap: 25px;
+    }
+    @media (max-width: 500px) {
+      gap: 25px;
+    }
+    @media (max-width: 370px) {
+      gap: 18px;
+    }
+    @media (max-width: 300px) {
+      margin: 0;
+      padding: 0;
+      gap: 26px;
+    }
     li {
       cursor: pointer;
       position: relative;
@@ -95,6 +108,10 @@
     opacity: 0;
     transform: translateY(30px);
     transition: 0.3s;
+    @media (max-width: 300px) {
+      width: 125%;
+      right: -20px;
+    }
     .nameUser {
       display: flex;
       font-size: 16px;

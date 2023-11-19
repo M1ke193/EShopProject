@@ -46,14 +46,11 @@
   .body,
   .footer {
     padding: 30px 15px;
-
   }
 }
 
-
 @media (min-width: 600px) {
   .mainlayout {
-
     .body,
     .footer {
       margin: 0px 5%;
@@ -63,22 +60,36 @@
 
 @media (min-width: 768px) {
   .mainlayout {
-
     .body,
     .footer {
-      margin: 0px 12%;
+      margin: 0px 7%;
     }
   }
 }
 
-
-
 @media (min-width: 960px) {
   .mainlayout {
+    .body,
+    .footer {
+      margin: 0px 2%;
+    }
+  }
+}
 
+@media (min-width: 1030px) {
+  .mainlayout {
     .body,
     .footer {
       margin: 0px 5%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .mainlayout {
+    .body,
+    .footer {
+      margin: 0px 2.5%;
     }
   }
 }

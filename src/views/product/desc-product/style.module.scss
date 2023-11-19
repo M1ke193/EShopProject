@@ -26,12 +26,21 @@
     gap: 60px;
     margin-bottom: 60px;
 
+    @media (max-width: 330px) {
+      justify-content: space-between;
+      gap: 0px
+    }
+
     span {
       position: relative;
       font-size: 26px;
       font-weight: bold;
       color: $gray;
       cursor: pointer;
+
+      @media (max-width: 380px) {
+        font-size: 20px;
+      }
     }
 
     span:hover {
@@ -79,6 +88,15 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
+        @media (max-width: 485px) {
+          justify-content: flex-start;
+          gap: 10px;
+
+          .leftDesc {
+            margin-bottom: 15px;
+          }
+        }
 
         .leftDesc,
         .rightDesc {
@@ -138,10 +156,29 @@
         flex-wrap: wrap;
         justify-content: space-between;
 
+        @media (max-width: 800px) {
+          gap: 50px;
+          justify-content: center;
+
+          .comment {
+            order: 2;
+            flex-basis: 100%;
+          }
+
+          .writeComment {
+            order: 1;
+            width: 100%;
+          }
+        }
+
         .comment {
           flex-basis: 45%;
           overflow: auto;
           margin-top: 30px;
+
+          @media (max-width: 800px) {
+            flex-basis: 100%;
+          }
 
           .titleDesc {
             margin-bottom: 30px;
@@ -155,6 +192,27 @@
             .imgContainer {
               max-width: 60px;
               max-height: 60px;
+
+              @media (max-width: 390px) {
+                max-width: 50px;
+                max-height: 50px;
+
+              }
+
+              @media (max-width: 330px) {
+                max-width: 40px;
+                max-height: 40px;
+              }
+
+              @media (max-width: 300px) {
+                max-width: 30px;
+                max-height: 30px;
+              }
+
+              @media (max-width: 280) {
+                max-width: 25px;
+                max-height: 25px;
+              }
             }
 
             img {
@@ -189,6 +247,10 @@
           display: flex;
           flex-direction: column;
           flex-basis: 49%;
+
+          @media (max-width: 800px) {
+            flex-basis: 100%;
+          }
 
           .textDesc {
             margin-bottom: 30px;
@@ -283,10 +345,10 @@
 
             .inputComment {
               flex-basis: 47%;
-              background-color: transparent;
 
               input {
                 padding: 16px 20px;
+                background-color: transparent !important;
               }
 
               label {
