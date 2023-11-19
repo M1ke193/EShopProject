@@ -101,6 +101,10 @@
         .leftDesc,
         .rightDesc {
           flex-basis: 49%;
+
+          @media (max-width: 485px) {
+            flex-basis: 100%;
+          }
         }
       }
 

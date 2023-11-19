@@ -5,7 +5,7 @@
   min-height: 50vh;
   position: relative;
 
-  @media (max-width: 560px) {
+  @media (max-width: 900px) {
     overflow-x: auto;
   }
 
@@ -14,6 +14,10 @@
     width: 100%;
     text-align: left;
     margin-bottom: 80px;
+
+    @media (max-width: 900px) {
+      width: 900px;
+    }
 
     .headerRow {
       padding: 18px 15px;
@@ -59,7 +63,6 @@
       .imgwrap {
         max-width: 80px;
         max-height: 80px;
-        position: relative;
 
         img {
           border-radius: 10px;
@@ -79,10 +82,6 @@
 
         @media (max-width: 960px) {
           font-size: 16px;
-        }
-
-        @media (max-width: 870px) {
-          font-size: 0px;
         }
       }
 

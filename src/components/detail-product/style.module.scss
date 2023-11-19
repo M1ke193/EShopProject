@@ -327,8 +327,12 @@
         }
 
         @media (max-width: 410px) {
-          padding: 19px 5px;
+          padding: 19px 10px;
           font-size: 12px;
+        }
+
+        @media (max-width: 370px) {
+          flex-basis: 150px;
         }
       }
     }

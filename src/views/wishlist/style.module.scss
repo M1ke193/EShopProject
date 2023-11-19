@@ -5,7 +5,7 @@
   font-family: $f-base;
   min-height: 50vh;
 
-  @media (max-width: 720px) {
+  @media (max-width: 960px) {
     overflow-x: auto;
   }
 
@@ -20,8 +20,8 @@
     text-align: left;
     margin-bottom: 80px;
 
-    @media (max-width: 720px) {
-      width: 720px;
+    @media (max-width: 960px) {
+      width: 960px;
     }
 
     .headerRow {
@@ -99,12 +99,8 @@
         cursor: pointer;
         transition: 0.3s;
 
-        @media (max-width: 960px) {
+        @media (max-width: 800px) {
           font-size: 16px;
-        }
-
-        @media (max-width: 870px) {
-          font-size: 0px;
         }
       }
 
